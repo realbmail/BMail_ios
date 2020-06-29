@@ -1,0 +1,100 @@
+/* 
+  Localizable.strings
+  BMail
+
+  Created by hyperorchid on 2020/6/25.
+  Copyright © 2020 NBS. All rights reserved.
+*/
+"Import QR image" = "导入二维码";
+"Scan QR Code" = "扫描二维码";
+"Cancel" = "取消";
+"Please Select an Option" = "请选择导入方式";
+"Passowrd is less than %d characters" = "密码不能短于%d字符";
+"The 2 passwords are not same"="两次密码输入不一致";
+"creating account......"="创建账号中......";
+"Create account failed" = "创建账号失败";
+"Image not found!"="加载图片失败";
+"Parse image failed"="解析二维码失败";
+"Unlcok the account......"="解锁账号......";
+"Confirm ownership"="确认所有者";
+"Password to unlock account"="确认身份的密码";
+"Import account failed"="导入账号失败";
+
+
+"Copy Success" = "复制成功";
+"BMail address is invalid" = "邮箱地址无效";
+
+"Tips:"="提示:";
+"OK"="确定";
+"Are you sure?" = "确定?";
+"YES"="是的";
+"NO"="不";
+"Auth Failed"="鉴权失败";
+"Open Wallet......"="打开钱包";
+"Password"="密码";
+"Password Confirmation!"="密码确认";
+
+"Invalid mail name"="无效的邮箱名";
+"Verifying on blockchain"="链上校验";
+"This bmail name doesn't match current address"="链上邮箱地址与本账号地址不匹配";
+
+
+"Saving......"="保存中......";
+"Save success to photo library"="保存成功";
+"Please authorize photo lib access"="请授权访问相册";
+
+"Inbox" = "收件箱";
+"Draft" = "草稿箱";
+"Sent" = "已发送";
+"Stars" = "星标";
+"Archieved" = "归档";
+"Spam" = "垃圾邮件";
+"Trash" = "垃圾箱";
+"AllMail" = "所有邮件";
+"Contact" = "联系人";
+"Stamp" = "邮票";
+"Setting" = "设置";
+"Account" = "账号";
+"BugReport" = "bug提交";
+"Help" = "帮助";
+"Delete"="删除";
+
+
+"Empty Data" = "空数据";
+"Generating QR Code Image" = "生成二维码......";
+"Scanning not supported" = "无权扫码";
+"Your device does not support scanning a code from an item. Please use a device with a camera." = "本设备不支持扫码";
+
+
+"Mail Account" = "邮箱账号";
+"Confirm to Clear?" = "确认清空吗?";
+"Clear All" = "清空";
+"Failed to encrypt mail data" = "加密邮件失败";
+"No Subject" = "无标题";
+"Crypted title" = "加密标题";
+
+"TO"="收件人";
+"MESSAGE" = "邮件内容";
+"BCC" = "密送";
+"CC"="抄送";
+"No rights to access" = "无权访问";
+"Confirm"="确认";
+"Save Draft"="保存草稿";
+"Drop Draft"="删除草稿";
+"Invalid mail adress" = "无效的邮箱地址";
+"No valid receipt"="无收件人";
+"Mail Author"="邮箱授权";
+"FROM:"="发件人";
+"Invalid BMail"="无效邮箱";
+"No Blockchain record for:"="链上无数据:";
+
+
+"Decrypted the mail first please"="请解码邮件数据";
+"Failed to open mail account"="解锁账号失败";
+"Mark as Unread" = "标记为未读";
+"Mark as Spam"="标记为垃圾邮件";
+"Crypted Mail"="邮件密文";
+"To Me"="发送给我";
+"Saving......"="保存中......";
+"Please authorize photo lib access"="请授权使用图库";
+"Min"="分钟";

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G46c" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDContact" representedClassName="CDContact" syncable="YES" codeGenerationType="class">
+        <attribute name="displayName" optional="YES" attributeType="String"/>
+        <attribute name="expireSince1970" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mailAddr" optional="YES" attributeType="String"/>
+        <attribute name="mailName" optional="YES" attributeType="String"/>
+        <attribute name="ownerMail" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CDEnvelope" representedClassName="CDEnvelope" syncable="YES" codeGenerationType="class">
+        <attribute name="bccs" optional="YES" attributeType="Binary"/>
+        <attribute name="ccs" optional="YES" attributeType="Binary"/>
+        <attribute name="eid" optional="YES" attributeType="String"/>
+        <attribute name="fromAddress" optional="YES" attributeType="String"/>
+        <attribute name="fromName" optional="YES" attributeType="String"/>
+        <attribute name="isArchieved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isDraft" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isInbox" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isSent" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isSpam" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isStarred" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isTrash" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isUnread" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="msgBody" optional="YES" attributeType="String"/>
+        <attribute name="pinCipher" optional="YES" attributeType="Binary"/>
+        <attribute name="sessionID" optional="YES" attributeType="String"/>
+        <attribute name="subject" optional="YES" attributeType="String"/>
+        <attribute name="timeSince1970" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="toAddress" optional="YES" attributeType="String"/>
+        <attribute name="tos" optional="YES" attributeType="Binary"/>
+    </entity>
+    <entity name="CDMailAccount" representedClassName="CDMailAccount" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="displayName" optional="YES" attributeType="String"/>
+        <attribute name="mailName" optional="YES" attributeType="String"/>
+        <attribute name="walletJson" optional="YES" attributeType="String"/>
+        <userInfo/>
+    </entity>
+    <entity name="CDSysConfig" representedClassName="CDSysConfig" syncable="YES" codeGenerationType="class">
+        <attribute name="activeMail" optional="YES" attributeType="String"/>
+        <attribute name="lastestMailTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mailCacheSize" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="walletTimeoutInMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="CDContact" positionX="261" positionY="216" width="128" height="118"/>
+        <element name="CDEnvelope" positionX="261" positionY="216" width="128" height="343"/>
+        <element name="CDMailAccount" positionX="261" positionY="189" width="128" height="118"/>
+        <element name="CDSysConfig" positionX="261" positionY="216" width="128" height="103"/>
+    </elements>
+</model>

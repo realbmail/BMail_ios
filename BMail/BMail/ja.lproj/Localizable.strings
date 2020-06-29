@@ -1,0 +1,101 @@
+/* 
+  Localizable.strings
+  BMail
+
+  Created by hyperorchid on 2020/6/25.
+  Copyright © 2020 NBS. All rights reserved.
+*/
+
+"Import QR image" = "QRコードをインポート";
+"Scan QR Code" = "QRコードのスキャン";
+"Cancel" = "キャンセル";
+"Please Select an Option" = "インポート方法を選択してください";
+"Passowrd is less than %d characters" = "パスワードは%d文字以上にしてください";
+"The 2 passwords are not same"="二つのパスワード入力が矛盾しています";
+"creating account......"="アカウントを作成しています……";
+"Create account failed" = "アカウントの作成に失敗しました";
+"Image not found!"="画像の読み込みに失敗しました";
+"Parse image failed"="QRコードの解析に失敗しました";
+"Unlcok the account......"="アカウントのロックを解除しています……";
+"Confirm ownership"="所有者を確認";
+"Password to unlock account"="本人確認のためのパスワード";
+"Import account failed"="インポートアカウントに失敗しました。";
+
+
+"Copy Success" = "コピー成功";
+"BMail address is invalid" = "無効なメールアドレス";
+
+"Tips:"="プロンプト:";
+"OK"="確認";
+"Are you sure?" = "確認?";
+"YES"="はい";
+"NO"="いいえ";
+"Auth Failed"="認証に失敗しました";
+"Open Wallet......"="オープンウォレット";
+"Password"="パスワード";
+"Password Confirmation!"="パスワードの確認";
+
+"Invalid mail name"="無効なメールボックス名";
+"Verifying on blockchain"="オンチェーン検証";
+"This bmail name doesn't match current address"="ブロックチェーンのメールアドレスがこのアカウントのアドレスと一致しません";
+
+
+"Saving......"="保存中……";
+"Save success to photo library"="保存成功しました";
+"Please authorize photo lib access"="アルバムへのアクセスを許可してください";
+
+"Inbox" = "受信箱";
+"Draft" = "下書き箱";
+"Sent" = "送信済み";
+"Stars" = "スター付き";
+"Archieved" = "アーカイブ";
+"Spam" = "スパム";
+"Trash" = "ごみ箱";
+"AllMail" = "すべてのメール";
+"Contact" = "連絡先";
+"Stamp" = "切手";
+"Setting" = "設定";
+"Account" = "アカウント";
+"BugReport" = "バグ提出";
+"Help" = "ヘルプ";
+"Delete"="削除";
+
+
+"Empty Data" = "ヌルデータ";
+"Generating QR Code Image" = "QRコードを生成しています……";
+"Scanning not supported" = "スキャンする権限がありません";
+"Your device does not support scanning a code from an item. Please use a device with a camera." = "このデバイスはQRコードのスキャンをサポートしていません";
+
+
+"Mail Account" = "電子メールアドレス";
+"Confirm to Clear?" = "全部清除してもよろしいですか？";
+"Clear All" = "全部清除";
+"Failed to encrypt mail data" = "暗号化メールに失敗しました";
+"No Subject" = "無題";
+"Crypted title" = "暗号化タイトル";
+
+"TO"="受信者";
+"MESSAGE" = "メールの内容";
+"BCC" = "密送する";
+"CC"="Cc";
+"No rights to access" = "アクセス権限なし";
+"Confirm"="確認";
+"Save Draft"="下書きを保存";
+"Drop Draft"="下書きを削除";
+"Invalid mail adress" = "無効なメールアドレス";
+"No valid receipt"="受信者なし";
+"Mail Author"="メール認証";
+"FROM:"="送信者";
+"Invalid BMail"="無効なメールボックス";
+"No Blockchain record for:"="ブロックチェーンにデータがありません：";
+
+
+"Decrypted the mail first please"="メールデータをデコードしてください";
+"Failed to open mail account"="オープンメールアカウントに失敗しました。";
+"Mark as Unread" = "未読としてマーク";
+"Mark as Spam"="迷惑メールとしてマーク";
+"Crypted Mail"="暗号化メール";
+"To Me"="TO Me";
+"Saving......"="保存中……";
+"Please authorize photo lib access"="アルバムの使用を許可してください";
+"Min"="分";

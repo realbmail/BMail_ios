@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmailDetailHeaderCell" rowHeight="100" id="0g4-1B-9Th" customClass="EmailDetailHeaderCell" customModule="BMail" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0g4-1B-9Th" id="9a9-6W-84g">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dWI-jh-z9g">
+                        <rect key="frame" x="18" y="24" width="291" height="68"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pO-eV-DWh">
+                                <rect key="frame" x="0.0" y="0.0" width="291" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="bVj-fV-QCZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="21"/>
+                                <color key="textColor" red="0.21568627450980393" green="0.22745098039215686" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7h0-ri-GuZ">
+                                <rect key="frame" x="0.0" y="20" width="291" height="8"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="jZV-Zj-nR6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSz-JG-bCV" customClass="TagListView">
+                                <rect key="frame" x="0.0" y="28" width="291" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vf-oa-jEx">
+                                <rect key="frame" x="0.0" y="66" width="291" height="2"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="FNg-32-o8z"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywo-OI-tiT">
+                        <rect key="frame" x="317" y="13" width="50" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="qef-gD-Tcd"/>
+                            <constraint firstAttribute="height" constant="25" id="zkD-LG-afB"/>
+                        </constraints>
+                        <state key="normal" image="mail_starred"/>
+                        <connections>
+                            <action selector="onStarButtonPressed:" destination="0g4-1B-9Th" eventType="touchUpInside" id="G73-kS-U0d"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dWI-jh-z9g" firstAttribute="top" secondItem="9a9-6W-84g" secondAttribute="top" constant="24" id="Waq-RG-1KI"/>
+                    <constraint firstItem="dWI-jh-z9g" firstAttribute="leading" secondItem="9a9-6W-84g" secondAttribute="leading" constant="18" id="gAH-2G-HWg"/>
+                    <constraint firstItem="Ywo-OI-tiT" firstAttribute="top" secondItem="9a9-6W-84g" secondAttribute="top" constant="13" id="lCg-Od-GtG"/>
+                    <constraint firstAttribute="bottom" secondItem="dWI-jh-z9g" secondAttribute="bottom" constant="8" id="lud-tu-RQl"/>
+                    <constraint firstItem="Ywo-OI-tiT" firstAttribute="leading" secondItem="dWI-jh-z9g" secondAttribute="trailing" constant="8" id="sd0-gG-hKy"/>
+                    <constraint firstAttribute="trailing" secondItem="Ywo-OI-tiT" secondAttribute="trailing" constant="8" id="uDL-wv-ZSQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="BottomMarginView" destination="8Vf-oa-jEx" id="kul-ak-Vi2"/>
+                <outlet property="TopMarginView" destination="7h0-ri-GuZ" id="amR-OL-K9U"/>
+                <outlet property="labelsListView" destination="uSz-JG-bCV" id="3wI-jD-Ckr"/>
+                <outlet property="subjectHeightConstraint" destination="bVj-fV-QCZ" id="utK-2w-fzM"/>
+                <outlet property="subjectLabel" destination="2pO-eV-DWh" id="CAk-ez-FI6"/>
+            </connections>
+            <point key="canvasLocation" x="43" y="-206"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mail_starred" width="20" height="20"/>
+    </resources>
+</document>

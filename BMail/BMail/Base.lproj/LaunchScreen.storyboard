@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rAB-W9-bWm">
+                                <rect key="frame" x="139" y="380" width="136" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="MrF-gK-zlu"/>
+                                    <constraint firstAttribute="height" constant="136" id="T5b-IP-PNR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poweredBy" translatesAutoresizingMaskIntoConstraints="NO" id="JKe-8e-Qwc">
+                                <rect key="frame" x="32" y="714" width="136" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="3Kr-ov-vHL"/>
+                                    <constraint firstAttribute="height" constant="80" id="fTD-Wn-ujQ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail Service Based On BlockChain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06N-gx-nB0">
+                                <rect key="frame" x="102.66666666666669" y="813" width="209" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.61960784313725492" green="0.62352941176470589" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JKe-8e-Qwc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="centerY" priority="500" constant="258" id="E82-gl-FP5"/>
+                            <constraint firstItem="JKe-8e-Qwc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="I6R-ic-1Am"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JKe-8e-Qwc" secondAttribute="bottom" constant="68" id="JNC-ee-wZE"/>
+                            <constraint firstItem="06N-gx-nB0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NWP-Ho-Hf9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="06N-gx-nB0" secondAttribute="bottom" constant="32" id="Z28-NL-r00"/>
+                            <constraint firstItem="rAB-W9-bWm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ncH-ZY-7Es"/>
+                            <constraint firstItem="rAB-W9-bWm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wDt-8D-chD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="136" height="136"/>
+        <image name="poweredBy" width="136" height="80"/>
+    </resources>
+</document>

@@ -1,0 +1,315 @@
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "0xc-oI-VfB"; */
+"0xc-oI-VfB.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "126-Wr-OfM"; */
+"126-Wr-OfM.text" = "Label";
+
+/* Class = "UILabel"; text = "This is my sheep.pdf"; ObjectID = "1p3-2q-q10"; */
+"1p3-2q-q10.text" = "This is my sheep.pdf";
+
+/* Class = "UINavigationItem"; title = "Config Mail"; ObjectID = "25h-HU-HVh"; */
+"25h-HU-HVh.title" = "配置邮箱";
+
+/* Class = "UIButton"; normalTitle = "Library"; ObjectID = "2Lg-f5-WSt"; */
+"2Lg-f5-WSt.normalTitle" = "图库";
+
+/* Class = "UITextField"; placeholder = "Subject"; ObjectID = "3V2-O4-OGp"; */
+"3V2-O4-OGp.placeholder" = "主题";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3v3-sc-eUL"; */
+"3v3-sc-eUL.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "5um-XU-azn"; */
+"5um-XU-azn.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "69c-dD-yls"; */
+"69c-dD-yls.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Help"; ObjectID = "6aN-ti-etr"; */
+"6aN-ti-etr.title" = "帮助";
+
+/* Class = "UILabel"; text = "Hash"; ObjectID = "6yF-ZZ-w0B"; */
+"6yF-ZZ-w0B.text" = "哈希";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8Te-wk-TIV"; */
+"8Te-wk-TIV.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "    Query"; ObjectID = "8xu-an-tIx"; */
+"8xu-an-tIx.normalTitle" = "    查询";
+
+/* Class = "UINavigationItem"; title = "Bug Report"; ObjectID = "94l-t3-9Bc"; */
+"94l-t3-9Bc.title" = "提交bug";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "9J0-VJ-o3q"; */
+"9J0-VJ-o3q.title" = "Item";
+
+/* Class = "UILabel"; text = "current bmail address"; ObjectID = "9l9-Nw-I23"; */
+"9l9-Nw-I23.text" = "current bmail address";
+
+/* Class = "UILabel"; text = "Daniel Tigse"; ObjectID = "BvI-Yi-F1R"; */
+"BvI-Yi-F1R.text" = "Daniel Tigse";
+
+/* Class = "UILabel"; text = "Copy this address and write it to BlockChain"; ObjectID = "CMa-JY-uem"; */
+"CMa-JY-uem.text" = "复制并写入区块链域名系统";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "D6U-po-9t2"; */
+"D6U-po-9t2.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "DAC-vs-mDq"; */
+"DAC-vs-mDq.title" = "Item";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "ERM-HC-zhf"; */
+"ERM-HC-zhf.text" = "Title";
+
+/* Class = "UILabel"; text = "Inbox"; ObjectID = "Egj-dW-WiS"; */
+"Egj-dW-WiS.text" = "Inbox";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "EmZ-xQ-hc7"; */
+"EmZ-xQ-hc7.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Other Documents"; ObjectID = "EnY-TB-S7l"; */
+"EnY-TB-S7l.normalTitle" = "Other Documents";
+
+/* Class = "UITextField"; placeholder = "Email name"; ObjectID = "FJi-gK-U2G"; */
+"FJi-gK-U2G.placeholder" = "邮箱名";
+
+/* Class = "UIButton"; normalTitle = "Create"; ObjectID = "FcA-GA-k87"; */
+"FcA-GA-k87.normalTitle" = "创建";
+
+/* Class = "UINavigationItem"; title = "New Account"; ObjectID = "Fur-59-Pbt"; */
+"Fur-59-Pbt.title" = "创建账号";
+
+/* Class = "UINavigationItem"; title = "Address"; ObjectID = "G3W-dv-IID"; */
+"G3W-dv-IID.title" = "地址";
+
+/* Class = "UITextField"; placeholder = "Password again"; ObjectID = "GC8-4h-3he"; */
+"GC8-4h-3he.placeholder" = "再次输入密码";
+
+/* Class = "UIBarButtonItem"; title = "Menu"; ObjectID = "GqD-ed-Zzn"; */
+"GqD-ed-Zzn.title" = "Menu";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "HVd-cu-pXc"; */
+"HVd-cu-pXc.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IKl-Qu-oMr"; */
+"IKl-Qu-oMr.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Izi-4h-oZA"; */
+"Izi-4h-oZA.text" = "Label";
+
+/* Class = "UILabel"; text = "Hash:"; ObjectID = "Lbh-Up-zTw"; */
+"Lbh-Up-zTw.text" = "邮箱哈希:";
+
+/* Class = "UILabel"; text = "Wallet time out"; ObjectID = "MPP-di-ZMH"; */
+"MPP-di-ZMH.text" = "账号存续";
+
+/* Class = "UILabel"; text = "Keep this Bmail Account QR security"; ObjectID = "Mu0-vF-14X"; */
+"Mu0-vF-14X.text" = "请妥善保存账号信息";
+
+/* Class = "UILabel"; text = "12"; ObjectID = "NAE-eV-jKl"; */
+"NAE-eV-jKl.text" = "12";
+
+/* Class = "UILabel"; text = "BMail Address on BlockChain："; ObjectID = "Ota-ad-lcp"; */
+"Ota-ad-lcp.text" = "链上邮箱地址:";
+
+/* Class = "UIButton"; normalTitle = "Undo"; ObjectID = "PYK-P2-yEU"; */
+"PYK-P2-yEU.normalTitle" = "撤回";
+
+/* Class = "UILabel"; text = "Reply All"; ObjectID = "RhI-XB-zpC"; */
+"RhI-XB-zpC.text" = "回复全部";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "S62-SN-CAF"; */
+"S62-SN-CAF.text" = "地址";
+
+/* Class = "UILabel"; text = "Pepe Le Pew"; ObjectID = "Scs-8G-YCh"; */
+"Scs-8G-YCh.text" = "Pepe Le Pew";
+
+/* Class = "UIButton"; normalTitle = "How to write to BlockChain"; ObjectID = "V3m-un-iKz"; */
+"V3m-un-iKz.normalTitle" = "如何配置区块链邮箱地址";
+
+/* Class = "UIBarButtonItem"; title = "Next"; ObjectID = "Viu-ra-YEb"; */
+"Viu-ra-YEb.title" = "下一步";
+
+/* Class = "UILabel"; text = "CName"; ObjectID = "WRD-Sd-28R"; */
+"WRD-Sd-28R.text" = "别名";
+
+/* Class = "UILabel"; text = "Click to copy address👆"; ObjectID = "Xsi-UQ-guA"; */
+"Xsi-UQ-guA.text" = "点击复制👆";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "YeM-VJ-SrV"; */
+"YeM-VJ-SrV.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "a1a-Y5-Ocn"; */
+"a1a-Y5-Ocn.normalTitle" = "确定";
+
+/* Class = "UIButton"; normalTitle = "Click To Copy"; ObjectID = "a9Q-l2-qkb"; */
+"a9Q-l2-qkb.normalTitle" = "点击复制";
+
+/* Class = "UIButton"; normalTitle = "more"; ObjectID = "aMV-Kx-Jdb"; */
+"aMV-Kx-Jdb.normalTitle" = "更多";
+
+/* Class = "UINavigationItem"; title = "Account"; ObjectID = "aYf-r4-jZt"; */
+"aYf-r4-jZt.title" = "账号";
+
+/* Class = "UINavigationItem"; title = "Mail"; ObjectID = "acV-VN-Rki"; */
+"acV-VN-Rki.title" = "邮箱";
+
+/* Class = "UILabel"; text = "QR"; ObjectID = "aq0-iQ-UPi"; */
+"aq0-iQ-UPi.text" = "二维码";
+
+/* Class = "UILabel"; text = "Reply"; ObjectID = "bCq-dZ-DwA"; */
+"bCq-dZ-DwA.text" = "回复";
+
+/* Class = "UILabel"; text = "50M"; ObjectID = "bTN-R8-LVm"; */
+"bTN-R8-LVm.text" = "50M";
+
+/* Class = "UINavigationItem"; title = "Stamp"; ObjectID = "biS-24-cFV"; */
+"biS-24-cFV.title" = "邮票";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "c2o-GG-Ey7"; */
+"c2o-GG-Ey7.text" = "Label";
+
+/* Class = "UILabel"; text = "5Min"; ObjectID = "cBi-uL-JAQ"; */
+"cBi-uL-JAQ.text" = "5分钟";
+
+/* Class = "UILabel"; text = "bmail address on blockchain"; ObjectID = "cLi-v6-mUq"; */
+"cLi-v6-mUq.text" = "链上区块链地址";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "cSh-hb-e2R"; */
+"cSh-hb-e2R.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "d2D-SW-n4U"; */
+"d2D-SW-n4U.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "New Contact"; ObjectID = "eZO-el-rxm"; */
+"eZO-el-rxm.title" = "新建联系人";
+
+/* Class = "UIButton"; normalTitle = "Save to Photo Library"; ObjectID = "efU-hI-EA5"; */
+"efU-hI-EA5.normalTitle" = "保存到相册";
+
+/* Class = "UITextView"; text = "a"; ObjectID = "evI-fB-LOs"; */
+"evI-fB-LOs.text" = "a";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "fbX-aZ-Rgf"; */
+"fbX-aZ-Rgf.text" = "Detail";
+
+/* Class = "UIViewController"; title = "Account Setting"; ObjectID = "fqV-lO-Pd6"; */
+"fqV-lO-Pd6.title" = "账户设置";
+
+/* Class = "UIButton"; normalTitle = "Config Mail Name"; ObjectID = "gHu-y3-qg5"; */
+"gHu-y3-qg5.normalTitle" = "配置";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "gTQ-aO-qC3"; */
+"gTQ-aO-qC3.title" = "完成";
+
+/* Class = "UINavigationItem"; title = "Backup"; ObjectID = "gc6-um-BuF"; */
+"gc6-um-BuF.title" = "备份";
+
+/* Class = "UILabel"; text = "Forward"; ObjectID = "i39-XP-KQ7"; */
+"i39-XP-KQ7.text" = "转发";
+
+/* Class = "UILabel"; text = "5Min"; ObjectID = "iZI-BW-58p"; */
+"iZI-BW-58p.text" = "5 分钟";
+
+/* Class = "UILabel"; text = "hash"; ObjectID = "ipR-fz-Nhk"; */
+"ipR-fz-Nhk.text" = "哈希";
+
+/* Class = "UILabel"; text = "BlockChain Address:"; ObjectID = "jjj-K2-xit"; */
+"jjj-K2-xit.text" = "区块链地址";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jmR-hx-tV8"; */
+"jmR-hx-tV8.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Copy"; ObjectID = "jpr-sA-7KZ"; */
+"jpr-sA-7KZ.normalTitle" = "复制";
+
+/* Class = "UIBarButtonItem"; title = "Menu"; ObjectID = "jr5-ei-cqe"; */
+"jr5-ei-cqe.title" = "菜单";
+
+/* Class = "UIButton"; normalTitle = "How to use BMail?"; ObjectID = "k2T-97-9Mq"; */
+"k2T-97-9Mq.normalTitle" = "如何使用BMail?";
+
+/* Class = "UIButton"; normalTitle = "Camera"; ObjectID = "kKi-4r-DVI"; */
+"kKi-4r-DVI.normalTitle" = "Camera";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "kVB-gg-p5X"; */
+"kVB-gg-p5X.placeholder" = "密码";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "kad-ti-u2a"; */
+"kad-ti-u2a.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kbK-Re-T4f"; */
+"kbK-Re-T4f.text" = "Label";
+
+/* Class = "UILabel"; text = "Blockchain Address:"; ObjectID = "lYm-Qv-Awu"; */
+"lYm-Qv-Awu.text" = "区块链地址:";
+
+/* Class = "UILabel"; text = "Mail Cache size"; ObjectID = "li3-5t-jHz"; */
+"li3-5t-jHz.text" = "缓存大小";
+
+/* Class = "UILabel"; text = "Message Deleted"; ObjectID = "lqE-gE-bJX"; */
+"lqE-gE-bJX.text" = "Message Deleted";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "m4u-pz-Dyc"; */
+"m4u-pz-Dyc.title" = "Item";
+
+/* Class = "UISegmentedControl"; n9t-oi-cCJ.segmentTitles[0] = "QR"; ObjectID = "n9t-oi-cCJ"; */
+"n9t-oi-cCJ.segmentTitles[0]" = "二维码";
+
+/* Class = "UISegmentedControl"; n9t-oi-cCJ.segmentTitles[1] = "Cipher Text"; ObjectID = "n9t-oi-cCJ"; */
+"n9t-oi-cCJ.segmentTitles[1]" = "密文";
+
+/* Class = "UIButton"; normalTitle = "Export"; ObjectID = "npU-wE-tvN"; */
+"npU-wE-tvN.normalTitle" = "导出";
+
+/* Class = "UILabel"; text = "From:"; ObjectID = "oRt-6E-aMc"; */
+"oRt-6E-aMc.text" = "发件人:";
+
+/* Class = "UINavigationItem"; title = "Contact"; ObjectID = "ptT-9E-j3a"; */
+"ptT-9E-j3a.title" = "联系人";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "r2Z-lE-DOb"; */
+"r2Z-lE-DOb.text" = "Label";
+
+/* Class = "UILabel"; text = "Password is used to create BlockChain account"; ObjectID = "rWZ-m8-GVd"; */
+"rWZ-m8-GVd.text" = "密码用于创建区块链账号";
+
+/* Class = "UILabel"; text = "128MB"; ObjectID = "rb9-aO-8YT"; */
+"rb9-aO-8YT.text" = "128MB";
+
+/* Class = "UILabel"; text = "Version"; ObjectID = "smJ-aZ-lmo"; */
+"smJ-aZ-lmo.text" = "版本";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "sne-B3-wLD"; */
+"sne-B3-wLD.placeholder" = "密码";
+
+/* Class = "UILabel"; text = "Local BMail Address:"; ObjectID = "tif-Vq-6y4"; */
+"tif-Vq-6y4.text" = "本邮箱地址:";
+
+/* Class = "UILabel"; text = "mini@eth"; ObjectID = "tjY-lp-VGN"; */
+"tjY-lp-VGN.text" = "mini@eth";
+
+/* Class = "UILabel"; text = "Sender"; ObjectID = "wp8-Ht-o7r"; */
+"wp8-Ht-o7r.text" = "发件人";
+
+/* Class = "UILabel"; text = "wsli@nbs.com"; ObjectID = "x9V-8o-AbB"; */
+"x9V-8o-AbB.text" = "wsli@nbs.com";
+
+/* Class = "UILabel"; text = "2020-05-30"; ObjectID = "xxO-n7-sI5"; */
+"xxO-n7-sI5.text" = "2020-05-30";
+
+/* Class = "UILabel"; text = "daniel@criptext.com"; ObjectID = "yMs-Hv-hZ5"; */
+"yMs-Hv-hZ5.text" = "daniel@criptext.com";
+
+/* Class = "UILabel"; text = "No Messages"; ObjectID = "zKx-M5-YGk"; */
+"zKx-M5-YGk.text" = "No Messages";
+
+/* Class = "UIBarButtonItem"; title = "Import"; ObjectID = "zWc-4e-RxD"; */
+"zWc-4e-RxD.title" = "导入";
+
+/* Class = "UIButton"; normalTitle = "Add Contact"; ObjectID = "ztc-CI-ylm"; */
+"ztc-CI-ylm.normalTitle" = "新增联系人";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "zye-ZH-FIc"; */
+"zye-ZH-FIc.text" = "Title";
