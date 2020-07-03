@@ -23,11 +23,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Scan Email Account QR Code</string>
+	<string>Scan Bmail QR Code</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Export Account QR Code</string>
+	<string>Read or Save Photo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Import Email Account QR Image</string>
+	<string>Read or Save Photo</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

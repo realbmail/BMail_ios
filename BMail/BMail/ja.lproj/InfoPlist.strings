@@ -1,0 +1,5 @@
+{
+    "NSCameraUsageDescription" = "カメラアクセス権限";
+    "NSPhotoLibraryAddUsageDescription" = "Bmailアカウントアルバムアクセス権限";
+    "NSPhotoLibraryUsageDescription" = "Bmailアカウントアルバムアクセス権限";
+}
