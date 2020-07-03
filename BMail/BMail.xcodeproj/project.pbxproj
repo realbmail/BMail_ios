@@ -48,6 +48,7 @@
 		69AD7B9C24A2269A00D1A0BC /* EmailDetailsContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AD7B9B24A2269A00D1A0BC /* EmailDetailsContactViewController.swift */; };
 		69ADBF86249C6C6400011A04 /* LibWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ADBF85249C6C6400011A04 /* LibWrapper.swift */; };
 		69AE0C5524825D2800244C06 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AE0C5424825D2800244C06 /* CoreDataManager.swift */; };
+		69B0D9E724AF3330006B665B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69B0D9E624AF3330006B665B /* Default-568h@2x.png */; };
 		69C16BFF2474CD7E00DAC81A /* EmailDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C16BFE2474CD7E00DAC81A /* EmailDetailsTableViewCell.swift */; };
 		69C16C052474D76C00DAC81A /* EmailDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C16C042474D76C00DAC81A /* EmailDetailHeaderCell.swift */; };
 		69C16C072474D77900DAC81A /* EmailDetailFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C16C062474D77900DAC81A /* EmailDetailFooterCell.swift */; };
@@ -189,11 +190,14 @@
 		69A34B602452E966004F5166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69A34B622452E967004F5166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69A34B652452E967004F5166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		69A34B672452E967004F5166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AD7B9B24A2269A00D1A0BC /* EmailDetailsContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDetailsContactViewController.swift; sourceTree = "<group>"; };
 		69ADBF85249C6C6400011A04 /* LibWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibWrapper.swift; sourceTree = "<group>"; };
 		69AE0C5324823AF000244C06 /* BMail 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BMail 2.xcdatamodel"; sourceTree = "<group>"; };
 		69AE0C5424825D2800244C06 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		69B0D9E024AF3225006B665B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		69B0D9E224AF322E006B665B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/Info.plist"; sourceTree = "<group>"; };
+		69B0D9E324AF3230006B665B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = ja.lproj/Info.plist; sourceTree = "<group>"; };
+		69B0D9E624AF3330006B665B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		69C16BFE2474CD7E00DAC81A /* EmailDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		69C16C042474D76C00DAC81A /* EmailDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDetailHeaderCell.swift; sourceTree = "<group>"; };
 		69C16C062474D77900DAC81A /* EmailDetailFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDetailFooterCell.swift; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 		69A34B482452E966004F5166 = {
 			isa = PBXGroup;
 			children = (
+				69B0D9E624AF3330006B665B /* Default-568h@2x.png */,
 				69F3980C2480D201007A67B3 /* RichEditorView */,
 				691C4A0F24553095000529E9 /* Cartfile */,
 				69A34B532452E966004F5166 /* BMail */,
@@ -416,7 +421,7 @@
 				69A34B5F2452E966004F5166 /* Main.storyboard */,
 				69A34B622452E967004F5166 /* Assets.xcassets */,
 				69A34B642452E967004F5166 /* LaunchScreen.storyboard */,
-				69A34B672452E967004F5166 /* Info.plist */,
+				69B0D9E124AF3225006B665B /* Info.plist */,
 				6964D11924A43CC000A2609E /* Localizable.strings */,
 				69A34B562452E966004F5166 /* BMail.xcdatamodeld */,
 			);
@@ -641,6 +646,7 @@
 				69F398722480D201007A67B3 /* outdent@2x.png in Resources */,
 				69F398832480D201007A67B3 /* italic@2x.png in Resources */,
 				69F3987E2480D201007A67B3 /* h2.png in Resources */,
+				69B0D9E724AF3330006B665B /* Default-568h@2x.png in Resources */,
 				69F3986C2480D201007A67B3 /* ordered_list.png in Resources */,
 				69F398862480D201007A67B3 /* clear@2x.png in Resources */,
 				69F398942480D201007A67B3 /* assert.js in Resources */,
@@ -810,6 +816,16 @@
 				6964D12724A4421F00A2609E /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		69B0D9E124AF3225006B665B /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69B0D9E024AF3225006B665B /* Base */,
+				69B0D9E224AF322E006B665B /* zh-Hans */,
+				69B0D9E324AF3230006B665B /* ja */,
+			);
+			name = Info.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
