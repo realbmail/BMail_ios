@@ -19,6 +19,10 @@ class StampViewController: UIViewController {
         @IBAction func showMenu(_ sender: Any) {
                 delegate?.toggleLeftPanel()
         }
+        
+        @IBAction func OperationWallet(_ sender: UIBarButtonItem) {
+        }
+        
 }
 
 
