@@ -111,7 +111,7 @@ public enum MailActionType :Int{
                 case .Contact:
                         return ("cont-icon", "cont-icon")
                 case .Stamp:
-                        return ("menu_stamp", "menu_stamp-active")
+                        return ("stamp_icon", "stamp_icon")
                 case .Setting:
                         return ("setting-icon", "setting-icon")
                 case .Account:

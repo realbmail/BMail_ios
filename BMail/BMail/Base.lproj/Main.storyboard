@@ -805,13 +805,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZv-9w-Wnd">
-                                <rect key="frame" x="16" y="102" width="343" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZv-9w-Wnd">
+                                <rect key="frame" x="16" y="104" width="343" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVf-gV-h8O">
+                                        <rect key="frame" x="8" y="8" width="33" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0xea8a3a416799d582bC46987E084886524E7449Df" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luW-gZ-MwK">
+                                        <rect key="frame" x="8" y="33" width="291" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="bIb-pX-JSM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.01 eth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4b-Gz-Zhx">
+                                        <rect key="frame" x="274" y="91" width="61" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bf-vU-edi">
+                                        <rect key="frame" x="303" y="27.666666666666657" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="M9F-MX-YbU"/>
+                                            <constraint firstAttribute="width" constant="32" id="jW6-t2-rBZ"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.94901960780000005" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="qrcode" catalog="system"/>
+                                        <connections>
+                                            <action selector="showStampWalletQR:" destination="N3b-eL-eii" eventType="touchUpInside" id="Fpl-yl-DNa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NVf-gV-h8O" firstAttribute="leading" secondItem="eZv-9w-Wnd" secondAttribute="leading" constant="8" id="DDn-7A-8X5"/>
+                                    <constraint firstItem="H4b-Gz-Zhx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eZv-9w-Wnd" secondAttribute="leading" constant="20" symbolic="YES" id="Vqg-uN-mmY"/>
+                                    <constraint firstAttribute="trailing" secondItem="H4b-Gz-Zhx" secondAttribute="trailing" constant="8" id="WmA-AR-8LD"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NVf-gV-h8O" secondAttribute="trailing" constant="20" symbolic="YES" id="Xr9-fy-Dpi"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Bf-vU-edi" secondAttribute="trailing" constant="8" id="Ybj-DC-nOn"/>
+                                    <constraint firstAttribute="bottom" secondItem="H4b-Gz-Zhx" secondAttribute="bottom" constant="8" id="aNK-f2-0g9"/>
+                                    <constraint firstItem="NVf-gV-h8O" firstAttribute="top" secondItem="eZv-9w-Wnd" secondAttribute="top" constant="8" id="bCP-aj-mpu"/>
+                                    <constraint firstItem="luW-gZ-MwK" firstAttribute="top" secondItem="NVf-gV-h8O" secondAttribute="bottom" constant="4" id="cQz-uj-faU"/>
+                                    <constraint firstItem="8Bf-vU-edi" firstAttribute="leading" secondItem="luW-gZ-MwK" secondAttribute="trailing" constant="4" id="gZf-Mk-wnI"/>
+                                    <constraint firstItem="luW-gZ-MwK" firstAttribute="leading" secondItem="eZv-9w-Wnd" secondAttribute="leading" constant="8" id="jIl-y9-m7P"/>
+                                    <constraint firstItem="8Bf-vU-edi" firstAttribute="centerY" secondItem="luW-gZ-MwK" secondAttribute="centerY" id="kIz-rX-BfR"/>
+                                    <constraint firstAttribute="height" constant="120" id="om2-Yc-VN9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eZv-9w-Wnd" firstAttribute="top" secondItem="0XB-ye-K5V" secondAttribute="top" constant="16" id="3Hu-sK-aQw"/>
+                            <constraint firstItem="eZv-9w-Wnd" firstAttribute="leading" secondItem="0XB-ye-K5V" secondAttribute="leading" constant="16" id="I0g-TK-fBv"/>
+                            <constraint firstItem="0XB-ye-K5V" firstAttribute="trailing" secondItem="eZv-9w-Wnd" secondAttribute="trailing" constant="16" id="a2h-xQ-Mgs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0XB-ye-K5V"/>
                     </view>
                     <navigationItem key="navigationItem" title="Stamp" id="biS-24-cFV">
@@ -826,6 +884,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="AddWalletBarBtn" destination="RNh-gt-w5f" id="I9a-Dp-1ZR"/>
+                        <outlet property="WalletAddresLbl" destination="luW-gZ-MwK" id="VAi-uc-OnH"/>
+                        <outlet property="WalletEthBalanceLbl" destination="H4b-Gz-Zhx" id="3i5-Dj-RcA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7G-wH-hAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3213,6 +3276,7 @@
         <image name="newmail-send-icon" width="24" height="24"/>
         <image name="pen-1" width="22" height="23"/>
         <image name="pen-icon" width="46" height="46"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
         <image name="reply-icon" width="14" height="14"/>
         <image name="scan_img" width="236" height="236"/>
         <image name="sign_visiblecharacters" width="14" height="14"/>

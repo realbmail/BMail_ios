@@ -11,6 +11,9 @@ import UIKit
 class StampViewController: UIViewController {
         var curViewType:MailActionType = .Stamp
         var delegate:CenterViewControllerDelegate?
+        @IBOutlet weak var AddWalletBarBtn: UIBarButtonItem!
+        @IBOutlet weak var WalletAddresLbl: UILabel!
+        @IBOutlet weak var WalletEthBalanceLbl: UILabel!
         
         
         override func viewDidLoad() {
@@ -23,6 +26,8 @@ class StampViewController: UIViewController {
         @IBAction func OperationWallet(_ sender: UIBarButtonItem) {
         }
         
+        @IBAction func showStampWalletQR(_ sender: UIButton) {
+        }
 }
 
 
