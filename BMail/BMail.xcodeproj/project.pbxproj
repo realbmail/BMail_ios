@@ -45,6 +45,8 @@
 		69A34B612452E966004F5166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A34B5F2452E966004F5166 /* Main.storyboard */; };
 		69A34B632452E967004F5166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69A34B622452E967004F5166 /* Assets.xcassets */; };
 		69A34B662452E967004F5166 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A34B642452E967004F5166 /* LaunchScreen.storyboard */; };
+		69A4FE0624DE84C40011C718 /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4FE0524DE84C40011C718 /* Stamp.swift */; };
+		69A4FE0824DE85470011C718 /* StampTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A4FE0724DE85470011C718 /* StampTableViewCell.swift */; };
 		69AD7B9C24A2269A00D1A0BC /* EmailDetailsContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AD7B9B24A2269A00D1A0BC /* EmailDetailsContactViewController.swift */; };
 		69ADBF86249C6C6400011A04 /* LibWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ADBF85249C6C6400011A04 /* LibWrapper.swift */; };
 		69AE0C5524825D2800244C06 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AE0C5424825D2800244C06 /* CoreDataManager.swift */; };
@@ -191,6 +193,8 @@
 		69A34B602452E966004F5166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69A34B622452E967004F5166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69A34B652452E967004F5166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69A4FE0524DE84C40011C718 /* Stamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
+		69A4FE0724DE85470011C718 /* StampTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampTableViewCell.swift; sourceTree = "<group>"; };
 		69AD7B9B24A2269A00D1A0BC /* EmailDetailsContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDetailsContactViewController.swift; sourceTree = "<group>"; };
 		69ADBF85249C6C6400011A04 /* LibWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibWrapper.swift; sourceTree = "<group>"; };
 		69AE0C5324823AF000244C06 /* BMail 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BMail 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 			children = (
 				694F2ADC2472412400AAA8FA /* SettingViewController.swift */,
 				7CD9DFC224733AC700BEF4B8 /* StampViewController.swift */,
+				69A4FE0724DE85470011C718 /* StampTableViewCell.swift */,
 				694F2AE0247241C100AAA8FA /* HelpViewController.swift */,
 				694F2ADE2472418300AAA8FA /* BugReportViewController.swift */,
 				694F2ADA2472406900AAA8FA /* ContactViewController.swift */,
@@ -554,6 +559,7 @@
 				69158DE424567FB000D74244 /* SystemConf.swift */,
 				7CE20B6F2464C89600721074 /* Contact.swift */,
 				7CE20B712464C97900721074 /* File.swift */,
+				69A4FE0524DE84C40011C718 /* Stamp.swift */,
 			);
 			path = logic;
 			sourceTree = "<group>";
@@ -736,6 +742,7 @@
 				69A13AD52462AC5C008150E1 /* RichEditorWrapperView.swift in Sources */,
 				7C97BEE62456658100693700 /* CoreDataUtils.swift in Sources */,
 				7CE20B702464C89600721074 /* Contact.swift in Sources */,
+				69A4FE0624DE84C40011C718 /* Stamp.swift in Sources */,
 				69F398562480D201007A67B3 /* RichEditorView.swift in Sources */,
 				69158DE524567FB000D74244 /* SystemConf.swift in Sources */,
 				691C4A0A24552F3E000529E9 /* ScannerViewController.swift in Sources */,
@@ -754,6 +761,7 @@
 				699980C724726BB800F02B2F /* AccountSettingCell.swift in Sources */,
 				69C16BFF2474CD7E00DAC81A /* EmailDetailsTableViewCell.swift in Sources */,
 				694F2AE1247241C100AAA8FA /* HelpViewController.swift in Sources */,
+				69A4FE0824DE85470011C718 /* StampTableViewCell.swift in Sources */,
 				694F2AD7247236C400AAA8FA /* AccountSettingViewController.swift in Sources */,
 				69158DE72456840100D74244 /* BMError.swift in Sources */,
 				694F2AD924723AC600AAA8FA /* CenterViewController.swift in Sources */,

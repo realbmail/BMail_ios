@@ -9,15 +9,19 @@
 import UIKit
 
 class StampViewController: UIViewController {
-        var curViewType:MailActionType = .Stamp
-        var delegate:CenterViewControllerDelegate?
         @IBOutlet weak var AddWalletBarBtn: UIBarButtonItem!
         @IBOutlet weak var WalletAddresLbl: UILabel!
         @IBOutlet weak var WalletEthBalanceLbl: UILabel!
+        @IBOutlet weak var StampAvailableTableView: UITableView!
         
+        var stampAvailable:[Stamp] = []
+        var curViewType:MailActionType = .Stamp
+        var delegate:CenterViewControllerDelegate?
         
         override func viewDidLoad() {
                 super.viewDidLoad()
+                StampAvailableTableView.rowHeight = 120
+                
         }
         @IBAction func showMenu(_ sender: Any) {
                 delegate?.toggleLeftPanel()
@@ -38,4 +42,19 @@ extension StampViewController: CenterViewController{
         func setDelegate(delegate: CenterViewControllerDelegate) {
                 self.delegate = delegate
         }
+}
+
+extension StampViewController: UITableViewDelegate, UITableViewDataSource{
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return stampAvailable.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "StampItemCellID", for: indexPath) as! StampTableViewCell
+                let s = stampAvailable[indexPath.row]
+                cell.populate(stamp:s)
+                return cell
+        }
+        
+        
 }
