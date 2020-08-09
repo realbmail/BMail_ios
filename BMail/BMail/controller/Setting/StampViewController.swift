@@ -20,8 +20,8 @@ class StampViewController: UIViewController {
         
         override func viewDidLoad() {
                 super.viewDidLoad()
-                StampAvailableTableView.rowHeight = 180
-                
+                StampAvailableTableView.rowHeight = 200
+                stampAvailable = Stamp.StampArray()
         }
         @IBAction func showMenu(_ sender: Any) {
                 delegate?.toggleLeftPanel()
@@ -55,6 +55,4 @@ extension StampViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.populate(stamp:s)
                 return cell
         }
-        
-        
 }
