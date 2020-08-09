@@ -17,9 +17,6 @@ struct Constants {
         public static let DefaultServicePrice = Double(2e18)
         public static let ContactExpireDuration = TimeInterval(60*60*24)
         
-        
-        public static let FreeBPTProvider = "0xea8a3a416799d582bC46987E084886524E7449Df"
-        public static let BPTSTOkenAddr = ["","0x86cd27106902e333758F6C1ef5d2a93b9A0a1Fe9"]
         public static let KEY_CURRENT_NETWORK = "KEY_CURRENT_NETWORK"
         public static let KEY_CURRENT_WALLET_DURATION = "KEY_CURRENT_WALLET_DURATION"
         
@@ -31,6 +28,7 @@ struct Constants {
         public static let DBNAME_SystemConfig = "CDSysConfig"
         public static let DBNAME_Envelope = "CDEnvelope"
         public static let DBNAME_Contract = "CDContact"
+        public static let DBNAME_Stamp = "CDStamp"
         
         
         static let NOTI_SYSTEM_ACTIVE_MAIL_CHANGED = Notification.Name("NOTI_SYSTEM_ACTIVE_MAIL_CHANGED")
