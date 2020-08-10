@@ -20,7 +20,7 @@ class StampViewController: UIViewController {
         
         override func viewDidLoad() {
                 super.viewDidLoad()
-                StampAvailableTableView.rowHeight = 200
+                StampAvailableTableView.rowHeight = 180
                 stampAvailable = Stamp.StampArray()
         }
         @IBAction func showMenu(_ sender: Any) {
