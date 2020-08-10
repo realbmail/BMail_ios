@@ -831,12 +831,11 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bf-vU-edi">
                                         <rect key="frame" x="55.333333333333329" y="3" width="32" height="32"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="M9F-MX-YbU"/>
                                             <constraint firstAttribute="width" constant="32" id="jW6-t2-rBZ"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.94901960780000005" green="0.52156862749999999" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="QR_icon"/>
                                         <connections>
                                             <action selector="showStampWalletQR:" destination="N3b-eL-eii" eventType="touchUpInside" id="Fpl-yl-DNa"/>

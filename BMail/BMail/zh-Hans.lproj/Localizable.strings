@@ -98,3 +98,5 @@
 "Saving......"="保存中......";
 "Please authorize photo lib access"="请授权使用图库";
 "Min"="分钟";
+
+"No valid stamp wallet" = "缺少有效的邮票钱包";

@@ -31,6 +31,11 @@ class StampViewController: UIViewController {
         }
         
         @IBAction func showStampWalletQR(_ sender: UIButton) {
+                guard  let address = self.WalletAddresLbl.text else {
+                        self.ShowTips(msg: "No valid stamp wallet".locStr)
+                        return
+                }
+                self.ShowQRAlertView(data: address)
         }
 }
 
