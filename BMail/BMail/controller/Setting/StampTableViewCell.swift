@@ -35,6 +35,7 @@ class StampTableViewCell: UITableViewCell {
                 self.SIssuerAddrLbl.text = stamp.IssuerAddr!
                 self.SMailTokenName.text = stamp.Name
                 self.SmailTokenSymbol.text = stamp.Symbol
+                
 //                self.SMailTokenIconImg
         }
         

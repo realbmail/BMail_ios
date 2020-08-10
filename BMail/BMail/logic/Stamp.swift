@@ -11,7 +11,7 @@ import CoreData
 import BmailLib
 
 class Stamp: NSObject{
-        
+        var IsInused:Bool = false
         var ContractAddr:String!
         var IssuerAddr:String!
         var Name:String!
@@ -41,6 +41,7 @@ class Stamp: NSObject{
                 testObj2.Balance = 85
                 testObj2.ActiveBalance = 15
                 testObj2.Credit = 12
+                testObj2.IsInused = true
                 StampAvailableCache[testObj2.ContractAddr] = testObj2
                 
                 let testObj1 = Stamp()
