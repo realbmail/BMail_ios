@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactViewController: UIViewController {
+class ContactViewController: UIViewController{
         
         var curViewType:MailActionType = .Contact
         var delegate:CenterViewControllerDelegate?
@@ -30,10 +30,45 @@ class ContactViewController: UIViewController {
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                let backItem = UIBarButtonItem()
-                backItem.title = ""
-                backItem.tintColor = UIColor.init(hexColorCode: "#222220")
-                navigationItem.backBarButtonItem = backItem
+                if segue.identifier == "AddContactByScanQR"{
+                         let vc : ScannerViewController = segue.destination as! ScannerViewController
+                         vc.delegate = self
+                }else{
+                        let backItem = UIBarButtonItem()
+                        backItem.title = ""
+                        backItem.tintColor = UIColor.init(hexColorCode: "#222220")
+                        navigationItem.backBarButtonItem = backItem
+                }
+        }
+        
+        @IBAction func AddNewContactAction(_ sender: UIBarButtonItem) {
+                
+                let searchAction = UIAlertAction(title: "Search By Name".locStr,
+                                                 style: .default) { (action) in
+                        self.performSegue(withIdentifier: "NewContactByQuerySegID", sender: self)
+                }
+                let qrAction = UIAlertAction(title: "QR Code".locStr,
+                                             style: .default) { (action) in
+                        self.performSegue(withIdentifier: "AddContactByScanQR", sender: self)
+                }
+                let cancelAction = UIAlertAction(title: "Cancel".locStr,
+                                                 style: .cancel) { (action) in
+                }
+                
+                let alert = UIAlertController(title: nil, message: nil,preferredStyle: .actionSheet)
+                alert.addAction(searchAction)
+                alert.addAction(qrAction)
+                alert.addAction(cancelAction)
+                alert.popoverPresentationController?.barButtonItem = sender
+                self.present(alert, animated: true)
+        }
+}
+
+extension ContactViewController: ScannerViewControllerDelegate{
+        
+        //TODO::
+        func codeDetected(code: String){
+                self.ShowTips(msg: code)
         }
 }
 

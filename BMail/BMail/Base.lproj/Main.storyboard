@@ -1983,11 +1983,11 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipX-6J-t2e">
-                                                    <rect key="frame" x="333" y="12" width="22" height="22"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="323" y="7" width="32" height="32"/>
+                                                    <color key="backgroundColor" red="0.015686274510000001" green="0.023529411760000001" blue="0.18039215689999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="1kx-I4-lWf"/>
-                                                        <constraint firstAttribute="width" constant="22" id="C0K-sG-LhR"/>
+                                                        <constraint firstAttribute="height" constant="32" id="1kx-I4-lWf"/>
+                                                        <constraint firstAttribute="width" constant="32" id="C0K-sG-LhR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <state key="normal" image="QR_icon">
@@ -2027,7 +2027,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55O-uw-vRE">
-                                                    <rect key="frame" x="291" y="12" width="22" height="22"/>
+                                                    <rect key="frame" x="281" y="12" width="22" height="22"/>
                                                     <color key="backgroundColor" red="0.94901960780000005" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="NQt-2m-mHt"/>
@@ -2153,8 +2153,8 @@
                                                     <color key="textColor" red="0.015686274510000001" green="0.023529411760000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3v3-sc-eUL">
-                                                    <rect key="frame" x="54" y="57.333333333333343" width="301" height="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3v3-sc-eUL">
+                                                    <rect key="frame" x="8" y="57.333333333333343" width="347" height="14"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" red="0.38039215686274508" green="0.38431372549019605" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2165,7 +2165,7 @@
                                                 <constraint firstItem="LfA-Z2-Q6S" firstAttribute="top" secondItem="JXV-5P-M5u" secondAttribute="top" constant="8" id="3mX-Vv-mnc"/>
                                                 <constraint firstItem="c2o-GG-Ey7" firstAttribute="top" secondItem="JXV-5P-M5u" secondAttribute="top" constant="8" id="C6T-HT-syX"/>
                                                 <constraint firstItem="EmZ-xQ-hc7" firstAttribute="top" secondItem="c2o-GG-Ey7" secondAttribute="bottom" constant="4" id="JzC-Cm-dsm"/>
-                                                <constraint firstItem="3v3-sc-eUL" firstAttribute="leading" secondItem="c2o-GG-Ey7" secondAttribute="leading" id="Kq8-P3-ihf"/>
+                                                <constraint firstItem="3v3-sc-eUL" firstAttribute="leading" secondItem="JXV-5P-M5u" secondAttribute="leading" constant="8" id="Kq8-P3-ihf"/>
                                                 <constraint firstItem="EmZ-xQ-hc7" firstAttribute="leading" secondItem="LfA-Z2-Q6S" secondAttribute="trailing" constant="8" id="Un7-zq-DaF"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EmZ-xQ-hc7" secondAttribute="trailing" constant="20" id="ZBW-6i-FaH"/>
                                                 <constraint firstItem="c2o-GG-Ey7" firstAttribute="leading" secondItem="LfA-Z2-Q6S" secondAttribute="trailing" constant="8" id="bdk-Lh-UTI"/>
@@ -2207,12 +2207,14 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="add-icon" id="YeM-VJ-SrV">
                             <color key="tintColor" red="0.13333333333333333" green="0.12549019607843137" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="3qN-cn-gbP" kind="show" identifier="NewContactItemSEG" id="Hp8-ci-S5V"/>
+                                <action selector="AddNewContactAction:" destination="c0b-00-ky1" id="dPQ-jw-Ox3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contactTableView" destination="myT-Iw-npr" id="8sD-1s-Lkj"/>
+                        <segue destination="3qN-cn-gbP" kind="show" identifier="NewContactByQuerySegID" id="y2w-bC-Uc4"/>
+                        <segue destination="26E-7U-3X5" kind="presentation" identifier="AddContactByScanQR" id="cUb-qM-dP5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gSP-sK-UOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2339,6 +2341,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYk-in-GP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-18173.599999999999" y="-3882.2660098522169"/>
+        </scene>
+        <!--Popover View Controller-->
+        <scene sceneID="mmP-rh-WrQ">
+            <objects>
+                <viewController storyboardIdentifier="PopoverViewController" id="GNA-cN-Knc" customClass="PopoverViewController" customModule="BMail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UTe-pc-Elr">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="HZb-j6-Uab"/>
+                    </view>
+                    <size key="freeformSize" width="200" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ytD-Mz-3qV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17330" y="-3893"/>
         </scene>
         <!--Account Header View Controller-->
         <scene sceneID="ZtW-DT-Mcn">
@@ -3438,7 +3456,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="lrl-YU-NPq"/>
-        <segue reference="Cb2-Ne-J0B"/>
+        <segue reference="cUb-qM-dP5"/>
         <segue reference="as9-yg-lDf"/>
         <segue reference="OmJ-lD-pxx"/>
         <segue reference="eXp-cC-NS5"/>
