@@ -33,26 +33,26 @@ class Stamp: NSObject{
         public static var StampAvailableCache:[String:Stamp] = [:]
         
         public static func StampArray() -> [Stamp]{
-                let testObj2 = Stamp()
-                testObj2.ContractAddr = "0xc6aA4C9dF3a65470D73b5919ec90a54a04BE409e"
-                testObj2.IssuerAddr = "0xea8a3a416799d582bC46987E084886524E7449Df"
-                testObj2.Name = "Gmail Stamp Token"
-                testObj2.Symbol = "GST"
-                testObj2.Balance = 85
-                testObj2.ActiveBalance = 15
-                testObj2.Credit = 12
-                testObj2.IsInused = true
-                StampAvailableCache[testObj2.ContractAddr] = testObj2
-                
-                let testObj1 = Stamp()
-                testObj1.ContractAddr = "0xea8a3a416799d582bC46987E084886524E7449Df"
-                testObj1.IssuerAddr = "0xc6aA4C9dF3a65470D73b5919ec90a54a04BE409e"
-                testObj1.Name = "Outlook Stamp Token"
-                testObj1.Symbol = "OST"
-                testObj1.Balance = 208
-                testObj1.ActiveBalance = 72
-                testObj1.Credit = 45
-                StampAvailableCache[testObj1.ContractAddr] = testObj1
+//                let testObj2 = Stamp()
+//                testObj2.ContractAddr = "0xc6aA4C9dF3a65470D73b5919ec90a54a04BE409e"
+//                testObj2.IssuerAddr = "0xea8a3a416799d582bC46987E084886524E7449Df"
+//                testObj2.Name = "Gmail Stamp Token"
+//                testObj2.Symbol = "GST"
+//                testObj2.Balance = 85
+//                testObj2.ActiveBalance = 15
+//                testObj2.Credit = 12
+//                testObj2.IsInused = true
+//                StampAvailableCache[testObj2.ContractAddr] = testObj2
+//
+//                let testObj1 = Stamp()
+//                testObj1.ContractAddr = "0xea8a3a416799d582bC46987E084886524E7449Df"
+//                testObj1.IssuerAddr = "0xc6aA4C9dF3a65470D73b5919ec90a54a04BE409e"
+//                testObj1.Name = "Outlook Stamp Token"
+//                testObj1.Symbol = "OST"
+//                testObj1.Balance = 208
+//                testObj1.ActiveBalance = 72
+//                testObj1.Credit = 45
+//                StampAvailableCache[testObj1.ContractAddr] = testObj1
                 return Array(StampAvailableCache.values)
         }
         
@@ -60,20 +60,12 @@ class Stamp: NSObject{
         public static func LoadStampDataFromCache(){
                 
                 StampAvailableCache.removeAll()
-                guard let mail_acc = AccountManager.currentAccount else{
+                
+                guard let domain = AccountManager.currentAccount?.getDomain() else {
                         return
                 }
                 
-                guard let owner = mail_acc.MailName() else{
-                        return
-                }
-                
-                let mailDomains = owner.split(separator: "@")
-                guard mailDomains.count == 2 else {
-                        return
-                }
-                
-                let condition = NSPredicate.init(format: "mailDomain == %@", String(mailDomains[1]))
+                let condition = NSPredicate.init(format: "mailDomain == %@", domain)
                 
                 guard let result = CoreDataUtils.CDInst.findEntity(Constants.DBNAME_Stamp,
                                                                    where: condition) as? [CDStamp]? else{
@@ -90,8 +82,11 @@ class Stamp: NSObject{
                 }
         }
         
-        public static func LoadAvailableStampAddressFromDomainOwner() -> [String]{
-                return []
+        public static func LoadAvailableStampAddressFromDomainOwner(){
+                guard let domain = AccountManager.currentAccount?.getDomain() else { return }
+                               
+                let json_str = BmailLibQueryStampListOf(domain)
+                print(json_str)
         }
         
         public static func FetchStampDetailfFromBlockchain(addrArr:[String]){

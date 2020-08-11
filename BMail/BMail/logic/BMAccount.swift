@@ -145,4 +145,17 @@ class BMAccount: NSObject {
         public func CipherTxt() ->String?{
                 return cdAccount?.walletJson
         }
+        
+        public func getDomain() -> String?{
+                guard let owner = self.cdAccount?.mailName else{
+                        return nil
+                }
+                
+                let mailDomains = owner.split(separator: "@")
+                guard mailDomains.count == 2 else {
+                        return nil
+                }
+                
+                return String(mailDomains[1])
+        }
 }

@@ -52,6 +52,7 @@
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="balance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="jsonStr" optional="YES" attributeType="String"/>
+        <attribute name="stampInUse" optional="YES" attributeType="String"/>
     </entity>
     <entity name="CDSysConfig" representedClassName="CDSysConfig" syncable="YES" codeGenerationType="class">
         <attribute name="activeMail" optional="YES" attributeType="String"/>
@@ -64,7 +65,7 @@
         <element name="CDEnvelope" positionX="261" positionY="216" width="128" height="343"/>
         <element name="CDMailAccount" positionX="261" positionY="189" width="128" height="118"/>
         <element name="CDStamp" positionX="261" positionY="351" width="128" height="164"/>
+        <element name="CDStampWallet" positionX="261" positionY="351" width="128" height="89"/>
         <element name="CDSysConfig" positionX="261" positionY="216" width="128" height="103"/>
-        <element name="CDStampWallet" positionX="261" positionY="351" width="128" height="74"/>
     </elements>
 </model>

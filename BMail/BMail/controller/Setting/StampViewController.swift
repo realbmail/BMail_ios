@@ -15,6 +15,7 @@ class StampViewController: UIViewController {
         @IBOutlet weak var rightBarBtnItem: UIBarButtonItem!
         @IBOutlet weak var EthBGView: UIView!
         
+        var refreshControl: UIRefreshControl! = UIRefreshControl()
         var stampAvailable:[Stamp] = []
         var curViewType:MailActionType = .Stamp
         var delegate:CenterViewControllerDelegate?
@@ -25,6 +26,10 @@ class StampViewController: UIViewController {
                 StampAvailableTableView.rowHeight = 192
                 StampWallet.LoadWallet()
                 Stamp.LoadStampDataFromCache()
+                refreshControl.tintColor = UIColor.red
+                refreshControl.addTarget(self, action: #selector(self.QueryStampFromServer(_:)), for: .valueChanged)
+                StampAvailableTableView.addSubview(refreshControl)
+                
                 stampAvailable = Stamp.StampArray()
                 
                 let tapGR = UITapGestureRecognizer.init(target: self, action: #selector(handleTap))
@@ -37,7 +42,7 @@ class StampViewController: UIViewController {
                         WalletAddresLbl.text = ""
                         WalletEthBalanceLbl.text = "0.0 eth"
                 }else{
-                        rightBarBtnItem.image = UIImage.init(named: "top_search")
+                        rightBarBtnItem.image = UIImage.init(named: "fresh-icon")
                         WalletAddresLbl.text = StampWallet.CurSWallet.Address!
                         WalletEthBalanceLbl.text = "\(StampWallet.CurSWallet.Balance.ToCoin()) eth"
                 }
@@ -50,6 +55,17 @@ class StampViewController: UIViewController {
                 
                 UIPasteboard.general.string = WalletAddresLbl.text
                 self.ShowTips(msg: "Copy Success".locStr)
+        }
+        
+        @objc func QueryStampFromServer(_ sender: UIRefreshControl) {
+                DispatchQueue.global(qos: .background).async {
+                        Stamp.LoadAvailableStampAddressFromDomainOwner()
+                        DispatchQueue.main.async {
+                                self.refreshControl.endRefreshing()
+                                self.stampAvailable = Stamp.StampArray()
+                                self.StampAvailableTableView.reloadData()
+                        }
+                }
         }
         
         @IBAction func showMenu(_ sender: Any) {
@@ -72,7 +88,7 @@ class StampViewController: UIViewController {
                                 }
                                 self.ShowTips(msg: "Success")
                                 DispatchQueue.main.async {
-                                        self.rightBarBtnItem.image = UIImage.init(named: "top_search")
+                                        self.rightBarBtnItem.image = UIImage.init(named: "fresh-icon")
                                         self.WalletAddresLbl.text = StampWallet.CurSWallet.Address!
                                 }
                        }
