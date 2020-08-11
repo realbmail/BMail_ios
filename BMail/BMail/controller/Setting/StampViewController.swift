@@ -17,10 +17,11 @@ class StampViewController: UIViewController {
         var stampAvailable:[Stamp] = []
         var curViewType:MailActionType = .Stamp
         var delegate:CenterViewControllerDelegate?
+        var inUsedPath:IndexPath?
         
         override func viewDidLoad() {
                 super.viewDidLoad()
-                StampAvailableTableView.rowHeight = 180
+                StampAvailableTableView.rowHeight = 192
                 stampAvailable = Stamp.StampArray()
         }
         @IBAction func showMenu(_ sender: Any) {
@@ -58,6 +59,22 @@ extension StampViewController: UITableViewDelegate, UITableViewDataSource{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "StampItemCellID", for: indexPath) as! StampTableViewCell
                 let s = stampAvailable[indexPath.row]
                 cell.populate(stamp:s)
+                if s.IsInused{
+                        self.inUsedPath = indexPath
+                }
                 return cell
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                let s = stampAvailable[indexPath.row]
+                s.IsInused = true
+                var need_reload = [indexPath]
+                if let path = self.inUsedPath{
+                        let s_old = stampAvailable[path.row]
+                        s_old.IsInused = false
+                        need_reload.append(path)
+                }
+                
+                tableView.reloadRows(at: need_reload, with: .none)
         }
 }

@@ -18,6 +18,7 @@ class StampTableViewCell: UITableViewCell {
         @IBOutlet weak var SMailTokenName: UILabel!
         @IBOutlet weak var SmailTokenSymbol: UILabel!
         @IBOutlet weak var SMailTokenIconImg: UIImageView!
+        @IBOutlet weak var InUseCheckImg: UIImageView!
         
         
         override func awakeFromNib() {
@@ -35,10 +36,11 @@ class StampTableViewCell: UITableViewCell {
                 self.SIssuerAddrLbl.text = stamp.IssuerAddr!
                 self.SMailTokenName.text = stamp.Name
                 self.SmailTokenSymbol.text = stamp.Symbol
+                self.InUseCheckImg.isHidden = !stamp.IsInused
                 
 //                self.SMailTokenIconImg
         }
         
-        @IBAction func SIssuerQRShow(_ sender: UIButton) {
+        @IBAction func ActiveStamp(_ sender: UIButton) {
         }
 }
