@@ -814,12 +814,12 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0xea8a3a416799d582bC46987E084886524E7449Df" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luW-gZ-MwK">
-                                        <rect key="frame" x="8" y="41.666666666666657" width="329" height="16.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0xea8a3a416799d582bC46987E084886524E7449Df" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luW-gZ-MwK">
+                                        <rect key="frame" x="8" y="41.666666666666657" width="329" height="17.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="bIb-pX-JSM"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1074,17 +1074,17 @@
                                 <action selector="showMenu:" destination="N3b-eL-eii" id="ryI-0a-0Z2"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="add-icon" id="RNh-gt-w5f">
+                        <barButtonItem key="rightBarButtonItem" image="redo.png" id="RNh-gt-w5f">
                             <connections>
                                 <action selector="OperationWallet:" destination="N3b-eL-eii" id="TeE-7B-kce"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="AddWalletBarBtn" destination="RNh-gt-w5f" id="I9a-Dp-1ZR"/>
                         <outlet property="StampAvailableTableView" destination="BGB-e8-2s7" id="BX8-ht-qSp"/>
                         <outlet property="WalletAddresLbl" destination="luW-gZ-MwK" id="VAi-uc-OnH"/>
                         <outlet property="WalletEthBalanceLbl" destination="H4b-Gz-Zhx" id="3i5-Dj-RcA"/>
+                        <outlet property="rightBarBtnItem" destination="RNh-gt-w5f" id="fVy-E6-cFf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7G-wH-hAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3476,6 +3476,7 @@
         <image name="newmail-send-icon" width="24" height="24"/>
         <image name="pen-1" width="22" height="23"/>
         <image name="pen-icon" width="46" height="46"/>
+        <image name="redo.png" width="28" height="28"/>
         <image name="reply-icon" width="14" height="14"/>
         <image name="scan_img" width="236" height="236"/>
         <image name="sign_visiblecharacters" width="14" height="14"/>

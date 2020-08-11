@@ -59,6 +59,7 @@
 		69DB1CFE24626DBC00CECC76 /* AttachmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DB1CFD24626DBC00CECC76 /* AttachmentTableViewCell.swift */; };
 		69DB1D0024626DF600CECC76 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DB1CFF24626DF600CECC76 /* ContactTableViewCell.swift */; };
 		69DB1D0224626E2E00CECC76 /* AttachmentOptionsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DB1D0124626E2E00CECC76 /* AttachmentOptionsContainerView.swift */; };
+		69E0606C24E23A620063AFF5 /* StampWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E0606B24E23A620063AFF5 /* StampWallet.swift */; };
 		69F398562480D201007A67B3 /* RichEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3980D2480D201007A67B3 /* RichEditorView.swift */; };
 		69F398572480D201007A67B3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3980E2480D201007A67B3 /* String+Extensions.swift */; };
 		69F398582480D201007A67B3 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3980F2480D201007A67B3 /* UIColor+Extensions.swift */; };
@@ -210,6 +211,7 @@
 		69DB1CFD24626DBC00CECC76 /* AttachmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentTableViewCell.swift; sourceTree = "<group>"; };
 		69DB1CFF24626DF600CECC76 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		69DB1D0124626E2E00CECC76 /* AttachmentOptionsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentOptionsContainerView.swift; sourceTree = "<group>"; };
+		69E0606B24E23A620063AFF5 /* StampWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampWallet.swift; sourceTree = "<group>"; };
 		69F3980D2480D201007A67B3 /* RichEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichEditorView.swift; sourceTree = "<group>"; };
 		69F3980E2480D201007A67B3 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		69F3980F2480D201007A67B3 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				7CE20B6F2464C89600721074 /* Contact.swift */,
 				7CE20B712464C97900721074 /* File.swift */,
 				69A4FE0524DE84C40011C718 /* Stamp.swift */,
+				69E0606B24E23A620063AFF5 /* StampWallet.swift */,
 			);
 			path = logic;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 			files = (
 				69AE0C5524825D2800244C06 /* CoreDataManager.swift in Sources */,
 				69A34B5C2452E966004F5166 /* InboxViewController.swift in Sources */,
+				69E0606C24E23A620063AFF5 /* StampWallet.swift in Sources */,
 				7C28F8F5245A834800CCF478 /* EnvelopeEntity.swift in Sources */,
 				7C894DD024541365005FED72 /* MenuViewController.swift in Sources */,
 				7C894DB02453E090005FED72 /* AccountManager.swift in Sources */,

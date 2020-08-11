@@ -29,6 +29,7 @@ struct Constants {
         public static let DBNAME_Envelope = "CDEnvelope"
         public static let DBNAME_Contract = "CDContact"
         public static let DBNAME_Stamp = "CDStamp"
+        public static let DBNAME_StampWallet = "CDStampWallet"
         
         
         static let NOTI_SYSTEM_ACTIVE_MAIL_CHANGED = Notification.Name("NOTI_SYSTEM_ACTIVE_MAIL_CHANGED")

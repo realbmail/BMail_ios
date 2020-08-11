@@ -9,10 +9,10 @@
 import UIKit
 
 class StampViewController: UIViewController {
-        @IBOutlet weak var AddWalletBarBtn: UIBarButtonItem!
         @IBOutlet weak var WalletAddresLbl: UILabel!
         @IBOutlet weak var WalletEthBalanceLbl: UILabel!
         @IBOutlet weak var StampAvailableTableView: UITableView!
+        @IBOutlet weak var rightBarBtnItem: UIBarButtonItem!
         
         var stampAvailable:[Stamp] = []
         var curViewType:MailActionType = .Stamp
@@ -23,12 +23,43 @@ class StampViewController: UIViewController {
                 super.viewDidLoad()
                 StampAvailableTableView.rowHeight = 192
                 stampAvailable = Stamp.StampArray()
+                
+                if StampWallet.CurSWallet.isEmpty(){
+                        rightBarBtnItem.image = UIImage.init(named: "add-icon")
+                        WalletAddresLbl.text = ""
+                        WalletEthBalanceLbl.text = "0.0 eth"
+                }else{
+                        rightBarBtnItem.image = UIImage.init(named: "redo")
+                        WalletAddresLbl.text = StampWallet.CurSWallet.Address!
+                        WalletEthBalanceLbl.text = "\(StampWallet.CurSWallet.Balance.ToCoin()) eth"
+                }
         }
         @IBAction func showMenu(_ sender: Any) {
                 delegate?.toggleLeftPanel()
         }
         
         @IBAction func OperationWallet(_ sender: UIBarButtonItem) {
+                if WalletAddresLbl.text == ""{
+                        self.showIndicator(withTitle: "", and: "Creating Stamp Wallet".locStr)
+                        self.ShowOneInput(title: "New Wallet".locStr,
+                                          placeHolder: "Password".locStr,
+                                          type: .default) {
+                                                
+                                (password, isOK) in
+                                defer{ self.hideIndicator()}
+                                guard let pwd = password, isOK else{ return }
+                                StampWallet.NewWallet(auth: pwd)
+                       }
+                }else{
+                        self.showIndicator(withTitle: "", and: "Loading")
+                        DispatchQueue.global(qos: .background).async {
+                                StampWallet.CurSWallet.loadBalance()
+                                DispatchQueue.main.async {
+                                        self.hideIndicator()
+                                        self.WalletEthBalanceLbl.text = "\(StampWallet.CurSWallet.Balance.ToCoin()) eth"
+                                }
+                        }
+                }
         }
         
         @IBAction func showStampWalletQR(_ sender: UIButton) {
