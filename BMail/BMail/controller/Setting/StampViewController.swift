@@ -23,6 +23,8 @@ class StampViewController: UIViewController {
         override func viewDidLoad() {
                 super.viewDidLoad()
                 StampAvailableTableView.rowHeight = 192
+                StampWallet.LoadWallet()
+                Stamp.LoadStampDataFromCache()
                 stampAvailable = Stamp.StampArray()
                 
                 let tapGR = UITapGestureRecognizer.init(target: self, action: #selector(handleTap))
