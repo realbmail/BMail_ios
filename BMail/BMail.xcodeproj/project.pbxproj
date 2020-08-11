@@ -23,6 +23,8 @@
 		693448D424A18DBA008287A6 /* AccountHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693448D324A18DBA008287A6 /* AccountHeaderViewController.swift */; };
 		69424C87249DFE1E009CBC77 /* ContactItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69424C86249DFE1E009CBC77 /* ContactItemTableViewCell.swift */; };
 		69424C89249E0387009CBC77 /* ContactNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69424C88249E0387009CBC77 /* ContactNewViewController.swift */; };
+		69444D6924E28F1600BC7415 /* TwoPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69444D6824E28F1600BC7415 /* TwoPasswordViewController.swift */; };
+		69444D6B24E291D000BC7415 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69444D6A24E291CF00BC7415 /* PasswordViewController.swift */; };
 		6947F1F02474F9EC003820F9 /* ReplyDetailUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947F1EF2474F9EC003820F9 /* ReplyDetailUIView.swift */; };
 		6947F1F22475110C003820F9 /* EmailDetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6947F1F12475110C003820F9 /* EmailDetailHeaderCell.xib */; };
 		694F2AD7247236C400AAA8FA /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694F2AD6247236C400AAA8FA /* AccountSettingViewController.swift */; };
@@ -164,6 +166,8 @@
 		693448D324A18DBA008287A6 /* AccountHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderViewController.swift; sourceTree = "<group>"; };
 		69424C86249DFE1E009CBC77 /* ContactItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItemTableViewCell.swift; sourceTree = "<group>"; };
 		69424C88249E0387009CBC77 /* ContactNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactNewViewController.swift; sourceTree = "<group>"; };
+		69444D6824E28F1600BC7415 /* TwoPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPasswordViewController.swift; sourceTree = "<group>"; };
+		69444D6A24E291CF00BC7415 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		6947F1EF2474F9EC003820F9 /* ReplyDetailUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyDetailUIView.swift; sourceTree = "<group>"; };
 		6947F1F12475110C003820F9 /* EmailDetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailDetailHeaderCell.xib; sourceTree = "<group>"; };
 		694F2AD6247236C400AAA8FA /* AccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +342,8 @@
 				69AE0C5424825D2800244C06 /* CoreDataManager.swift */,
 				691C4A3724555BD2000529E9 /* Constants.swift */,
 				691C4A1A2455460A000529E9 /* OnePasswordViewController.swift */,
+				69444D6824E28F1600BC7415 /* TwoPasswordViewController.swift */,
+				69444D6A24E291CF00BC7415 /* PasswordViewController.swift */,
 				691C4A112455316C000529E9 /* QRCodeShowViewController.swift */,
 				691C4A0924552F3E000529E9 /* ScannerViewController.swift */,
 				691C4A0B24553033000529E9 /* ViewController+Utils.swift */,
@@ -739,6 +745,7 @@
 			files = (
 				69AE0C5524825D2800244C06 /* CoreDataManager.swift in Sources */,
 				69A34B5C2452E966004F5166 /* InboxViewController.swift in Sources */,
+				69444D6924E28F1600BC7415 /* TwoPasswordViewController.swift in Sources */,
 				69E0606C24E23A620063AFF5 /* StampWallet.swift in Sources */,
 				7C28F8F5245A834800CCF478 /* EnvelopeEntity.swift in Sources */,
 				7C894DD024541365005FED72 /* MenuViewController.swift in Sources */,
@@ -782,6 +789,7 @@
 				7C894DCC2453F5AD005FED72 /* ContainerViewController.swift in Sources */,
 				691C4A122455316D000529E9 /* QRCodeShowViewController.swift in Sources */,
 				69ADBF86249C6C6400011A04 /* LibWrapper.swift in Sources */,
+				69444D6B24E291D000BC7415 /* PasswordViewController.swift in Sources */,
 				693448D424A18DBA008287A6 /* AccountHeaderViewController.swift in Sources */,
 				69AD7B9C24A2269A00D1A0BC /* EmailDetailsContactViewController.swift in Sources */,
 				691AD1A3247E94DA00256B37 /* SysDataSettingsTVC.swift in Sources */,

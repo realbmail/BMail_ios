@@ -30,10 +30,6 @@ class StampWallet: NSObject {
                 Balance = coredata.balance
         }
         
-        init(jsonStr:String){
-                
-        }
-        
         func isEmpty() -> Bool {
                 return self.Address == nil
         }
@@ -51,7 +47,7 @@ class StampWallet: NSObject {
         public static func LoadWallet(){
                 guard let wallet = CoreDataUtils.CDInst.findOneEntity(Constants.DBNAME_StampWallet)
                         as? CDStampWallet else{ return }
-                
+                print(wallet.jsonStr!)
                 guard BmailLibStampWalletFromJson(wallet.jsonStr) == true else{
                         return
                 }
@@ -62,8 +58,24 @@ class StampWallet: NSObject {
                 }
         }
         
-        public static func NewWallet(auth:String){
+        public static func NewWallet(auth:String) -> Bool{
+                guard CurSWallet.isEmpty() else{
+                        return false
+                }
+                
                 let jsonStr = BmailLibNewStampWallet(auth)
-                CurSWallet = StampWallet(jsonStr: jsonStr)
+                if jsonStr == ""{
+                        return false
+                }
+                
+                CurSWallet.Address = BmailLibStampWalletAddress()
+                CurSWallet.cdWallet = CoreDataUtils.CDInst.newEntity(Constants.DBNAME_StampWallet){
+                        (newObj) in
+                        newObj.address = CurSWallet.Address
+                        newObj.balance = 0
+                        newObj.jsonStr = jsonStr
+                }
+                
+                return true
         }
 }

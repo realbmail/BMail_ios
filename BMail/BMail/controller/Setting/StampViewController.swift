@@ -13,6 +13,7 @@ class StampViewController: UIViewController {
         @IBOutlet weak var WalletEthBalanceLbl: UILabel!
         @IBOutlet weak var StampAvailableTableView: UITableView!
         @IBOutlet weak var rightBarBtnItem: UIBarButtonItem!
+        @IBOutlet weak var EthBGView: UIView!
         
         var stampAvailable:[Stamp] = []
         var curViewType:MailActionType = .Stamp
@@ -24,16 +25,31 @@ class StampViewController: UIViewController {
                 StampAvailableTableView.rowHeight = 192
                 stampAvailable = Stamp.StampArray()
                 
+                let tapGR = UITapGestureRecognizer.init(target: self, action: #selector(handleTap))
+                tapGR.numberOfTapsRequired = 2
+                tapGR.numberOfTouchesRequired = 1
+                EthBGView.addGestureRecognizer(tapGR)
+                
                 if StampWallet.CurSWallet.isEmpty(){
                         rightBarBtnItem.image = UIImage.init(named: "add-icon")
                         WalletAddresLbl.text = ""
                         WalletEthBalanceLbl.text = "0.0 eth"
                 }else{
-                        rightBarBtnItem.image = UIImage.init(named: "redo")
+                        rightBarBtnItem.image = UIImage.init(named: "top_search")
                         WalletAddresLbl.text = StampWallet.CurSWallet.Address!
                         WalletEthBalanceLbl.text = "\(StampWallet.CurSWallet.Balance.ToCoin()) eth"
                 }
         }
+        
+        @objc func handleTap() {
+                guard  WalletAddresLbl.text != "" else{
+                        return
+                }
+                
+                UIPasteboard.general.string = WalletAddresLbl.text
+                self.ShowTips(msg: "Copy Success".locStr)
+        }
+        
         @IBAction func showMenu(_ sender: Any) {
                 delegate?.toggleLeftPanel()
         }
@@ -41,14 +57,22 @@ class StampViewController: UIViewController {
         @IBAction func OperationWallet(_ sender: UIBarButtonItem) {
                 if WalletAddresLbl.text == ""{
                         self.showIndicator(withTitle: "", and: "Creating Stamp Wallet".locStr)
-                        self.ShowOneInput(title: "New Wallet".locStr,
+                        self.ShowTwoInput(title: "New Stamp Wallet".locStr,
                                           placeHolder: "Password".locStr,
                                           type: .default) {
-                                                
                                 (password, isOK) in
+                                
                                 defer{ self.hideIndicator()}
                                 guard let pwd = password, isOK else{ return }
-                                StampWallet.NewWallet(auth: pwd)
+                                guard StampWallet.NewWallet(auth: pwd) else{
+                                        self.ShowTips(msg: "create wallet failed")
+                                        return
+                                }
+                                self.ShowTips(msg: "Success")
+                                DispatchQueue.main.async {
+                                        self.rightBarBtnItem.image = UIImage.init(named: "top_search")
+                                        self.WalletAddresLbl.text = StampWallet.CurSWallet.Address!
+                                }
                        }
                 }else{
                         self.showIndicator(withTitle: "", and: "Loading")

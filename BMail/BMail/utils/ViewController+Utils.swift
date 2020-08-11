@@ -16,13 +16,6 @@ enum OpenWalletAction{
 }
 
 extension UIViewController {
-        public struct AlertPayload {
-                var title:String!
-                var placeholderTxt:String?
-                var securityShow:Bool = true
-                var keyType:UIKeyboardType = .default
-                var action:((String?, Bool)->Void)!
-        }
         
         func alertMessageToast(title:String) ->Void {DispatchQueue.main.async {
             let hud : MBProgressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -72,12 +65,20 @@ extension UIViewController {
                }
         }
         
-        func ShowOneInput(title: String, placeHolder:String?, type:UIKeyboardType, nextAction:((String?, Bool)->Void)?) {
+        func ShowOneInput(title: String, placeHolder:String?, type:UIKeyboardType, nextAction:ActionFunction?) {
                 
                 let ap = AlertPayload(title: title, placeholderTxt: placeHolder, securityShow:false, keyType: type, action: nextAction)
                 
                 LoadAlertFromStryBoard(payload: ap)
         }
+        
+        func ShowTwoInput(title: String, placeHolder:String?, type:UIKeyboardType, nextAction:ActionFunction?) {
+                
+                let ap = AlertPayload(title: title, placeholderTxt: placeHolder, securityShow:false, keyType: type, action: nextAction)
+                
+                LoadAlertFromStryBoard(payload: ap, name: "TwoPasswordViewControllerID")
+        }
+        
         
         func OpenWallet(title: String, placeHolder:String?, nextAction:@escaping((_ acton:OpenWalletAction)->Void)) {
                 
@@ -106,11 +107,11 @@ extension UIViewController {
                 LoadAlertFromStryBoard(payload: ap)
         }
         
-        func LoadAlertFromStryBoard(payload:AlertPayload){ DispatchQueue.main.async {
+        func LoadAlertFromStryBoard(payload:AlertPayload, name:String = "OnePasswordViewControllerID"){ DispatchQueue.main.async {
                 
                         guard let alertVC = instantiateViewController(storyboardName: "Main",
-                                                                     viewControllerIdentifier: "OnePasswordViewControllerID")
-                            as? OnePasswordViewController else{
+                                                                     viewControllerIdentifier:name)
+                            as? PasswordViewController else{
                             return
                         }
                         
