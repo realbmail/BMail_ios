@@ -34,6 +34,8 @@
 		694F2ADF2472418300AAA8FA /* BugReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694F2ADE2472418300AAA8FA /* BugReportViewController.swift */; };
 		694F2AE1247241C100AAA8FA /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694F2AE0247241C100AAA8FA /* HelpViewController.swift */; };
 		6964D11724A43CC000A2609E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6964D11924A43CC000A2609E /* Localizable.strings */; };
+		697FA93924E3C7440022B323 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697FA93824E3C7440022B323 /* SwiftyJSON.framework */; };
+		697FA93A24E3C7440022B323 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 697FA93824E3C7440022B323 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		699980C724726BB800F02B2F /* AccountSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699980C624726BB800F02B2F /* AccountSettingCell.swift */; };
 		69A13AD124628419008150E1 /* CLTokenInputView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A13AD024628419008150E1 /* CLTokenInputView.framework */; };
 		69A13AD52462AC5C008150E1 /* RichEditorWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A13AD42462AC5C008150E1 /* RichEditorWrapperView.swift */; };
@@ -149,6 +151,20 @@
 		7CFB888C24590AFF00106EFE /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB888B24590AFF00106EFE /* MenuTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		697FA93B24E3C7450022B323 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				697FA93A24E3C7440022B323 /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		69158DE424567FB000D74244 /* SystemConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConf.swift; sourceTree = "<group>"; };
 		69158DE62456840100D74244 /* BMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMError.swift; sourceTree = "<group>"; };
@@ -184,6 +200,7 @@
 		6964D12424A441FC00A2609E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6964D12524A4420100A2609E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6964D12724A4421F00A2609E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		697FA93824E3C7440022B323 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		699980C624726BB800F02B2F /* AccountSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingCell.swift; sourceTree = "<group>"; };
 		69A13AD024628419008150E1 /* CLTokenInputView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CLTokenInputView.framework; path = Carthage/Build/iOS/CLTokenInputView.framework; sourceTree = "<group>"; };
 		69A13AD42462AC5C008150E1 /* RichEditorWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichEditorWrapperView.swift; sourceTree = "<group>"; };
@@ -312,6 +329,7 @@
 				69C16C092474DC9000DAC81A /* TagListView.framework in Frameworks */,
 				691C4A35245558E6000529E9 /* BmailLib.framework in Frameworks */,
 				69A13AD124628419008150E1 /* CLTokenInputView.framework in Frameworks */,
+				697FA93924E3C7440022B323 /* SwiftyJSON.framework in Frameworks */,
 				7CE20B792464D0FB00721074 /* TLPhotoPicker.framework in Frameworks */,
 				691C4A152455319E000529E9 /* MBProgressHUD.framework in Frameworks */,
 			);
@@ -359,6 +377,7 @@
 		691C4A132455319D000529E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				697FA93824E3C7440022B323 /* SwiftyJSON.framework */,
 				69C16C082474DC8F00DAC81A /* TagListView.framework */,
 				7CE20B782464D0FB00721074 /* TLPhotoPicker.framework */,
 				69A16AA52463DEF000CB71BF /* CICropPicker.framework */,
@@ -584,6 +603,7 @@
 				69A34B4E2452E966004F5166 /* Frameworks */,
 				69A34B4F2452E966004F5166 /* Resources */,
 				69A26AB42456B91F00D73FF1 /* carthage */,
+				697FA93B24E3C7450022B323 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -726,6 +746,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/CICropPicker.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TLPhotoPicker.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TagListView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			name = carthage;
 			outputFileListPaths = (

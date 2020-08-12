@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import BmailLib
+import SwiftyJSON
 
 class Stamp: NSObject{
         var IsInused:Bool = false
@@ -20,6 +21,7 @@ class Stamp: NSObject{
         var Balance:Int64 = 0
         var ActiveBalance:Int64 = 0
         var Credit:Int64 = 0
+        var Epoch:Int64 = 0
         
         override init() {
         }
@@ -27,7 +29,15 @@ class Stamp: NSObject{
         init(coreData:CDStamp){
         }
         
-        init(jsonStr:String){
+        init(jsonData:Data){
+                let json = JSON(jsonData)
+                IssuerAddr = json["issuer"].string
+                Name = json["name"].string
+                Symbol = json["symbol"].string
+                IconUrl = json["icon"].string
+                Balance = json["balance"].int64 ?? 0
+                ActiveBalance = json["active"].int64 ?? 0
+                Epoch = json["epoch"].int64 ?? 0
         }
         
         public static var StampAvailableCache:[String:Stamp] = [:]
@@ -85,15 +95,23 @@ class Stamp: NSObject{
         public static func LoadAvailableStampAddressFromDomainOwner(){
                 guard let domain = AccountManager.currentAccount?.getDomain() else { return }
                                
-                let json_str = BmailLibQueryStampListOf(domain)
-                print(json_str)
-        }
-        
-        public static func FetchStampDetailfFromBlockchain(addrArr:[String]){
+                guard let json_data = BmailLibQueryStampListOf(domain) else{
+                        return
+                }
+                let json = JSON(json_data)
+                let addr_arr = json["stampAddr"].arrayValue as Array<JSON>
+                if addr_arr.count == 0{
+                        return
+                }
+                
                 StampAvailableCache.removeAll()
-                for addr in addrArr{
-                        let detail_str = BmailLibStampDetails(addr)
-                        let stamp = Stamp.init(jsonStr:detail_str)
+                for addr in addr_arr{
+                        guard let detail_data = BmailLibStampDetails(addr.string) else{
+                                NSLog("query detailf for[\(addr.string ?? "<->")] failed")
+                                continue
+                        }
+                        let stamp = Stamp.init(jsonData:detail_data)
+                        stamp.ContractAddr = addr.string
                         StampAvailableCache[stamp.ContractAddr] = stamp
                 }
         }
