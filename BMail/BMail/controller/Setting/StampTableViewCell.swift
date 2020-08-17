@@ -37,8 +37,10 @@ class StampTableViewCell: UITableViewCell {
                 self.SMailTokenName.text = stamp.Name
                 self.SmailTokenSymbol.text = stamp.Symbol
                 self.InUseCheckImg.isHidden = !stamp.IsInused
-                
-//                self.SMailTokenIconImg
+                guard let url = stamp.IconUrl, url != "" else{
+                        return
+                }
+                self.SMailTokenIconImg.load(url:URL.init(string: url)!)
         }
         
         @IBAction func ActiveStamp(_ sender: UIButton) {
