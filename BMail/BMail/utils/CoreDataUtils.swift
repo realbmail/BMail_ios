@@ -127,6 +127,31 @@ public class CoreDataUtils: NSObject{
                                 context.delete(object)
                         }
                 }
-                saveContext()
+        }
+        
+        open func updateOrInsert<T>(_ entityName: String, isExist:((T)->Bool), updateObj:((T)->Void), insertObj:((T)->Void), where w:NSPredicate? = nil){
+                       
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+                request.predicate = w
+                       
+                guard let result = try? context.fetch(request) as? [T] else{
+                        return
+                }
+                
+                for object in result {
+                        if isExist(object){
+                                updateObj(object)
+                        }else{
+                                let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+                                guard  let e = entity else {
+                                        return
+                                }
+                                
+                                guard let newObj = NSManagedObject(entity: e, insertInto: context) as? T else{
+                                        return
+                                }
+                                insertObj(newObj)
+                        }
+                }
         }
 }

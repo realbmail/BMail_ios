@@ -111,6 +111,29 @@ class StampViewController: UIViewController {
                 }
                 self.ShowQRAlertView(data: address)
         }
+        
+        @IBAction func activeStampBalance(_ sender: UIButton) {
+                let stamp = stampAvailable[sender.tag]
+                guard let contract_address = stamp.ContractAddr else{
+                        return
+                }
+                
+                self.ShowOneInput(title: "Active Stamp", placeHolder: "amount to active", type: .numberPad) {
+                        (amountStr, isOK) in
+                        guard let amount = Int64(amountStr ?? "0"), isOK, amount > 0 else{
+                                return
+                        }
+                        guard amount <= stamp.Balance else{
+                                self.ShowTips(msg: "Balance is not enough to active")
+                                return
+                        }
+                        do {
+                                try StampWallet.ActiveBalance(amount: amount, tokenAddr: contract_address)
+                        }catch let err{
+                                self.ShowTips(msg: err.localizedDescription)
+                        }
+                }
+        }
 }
 
 
@@ -131,7 +154,7 @@ extension StampViewController: UITableViewDelegate, UITableViewDataSource{
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "StampItemCellID", for: indexPath) as! StampTableViewCell
                 let s = stampAvailable[indexPath.row]
-                cell.populate(stamp:s)
+                cell.populate(stamp:s, idx: indexPath.row)
                 if s.IsInused{
                         self.inUsedPath = indexPath
                 }

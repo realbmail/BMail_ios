@@ -19,6 +19,7 @@ class StampTableViewCell: UITableViewCell {
         @IBOutlet weak var SmailTokenSymbol: UILabel!
         @IBOutlet weak var SMailTokenIconImg: UIImageView!
         @IBOutlet weak var InUseCheckImg: UIImageView!
+        @IBOutlet weak var activeBtn: UIButton!
         
         
         override func awakeFromNib() {
@@ -29,7 +30,7 @@ class StampTableViewCell: UITableViewCell {
                 super.setSelected(selected, animated: animated)
         }
         
-        func populate(stamp:Stamp) {
+        func populate(stamp:Stamp, idx:Int) {
                 self.SBalanceLbl.text = "\(stamp.Balance)"
                 self.SActiveLbl.text = "\(stamp.ActiveBalance)"
                 self.SCreditLbl.text = "\(stamp.Credit)"
@@ -37,12 +38,10 @@ class StampTableViewCell: UITableViewCell {
                 self.SMailTokenName.text = stamp.Name
                 self.SmailTokenSymbol.text = stamp.Symbol
                 self.InUseCheckImg.isHidden = !stamp.IsInused
+                activeBtn.tag = idx
                 guard let url = stamp.IconUrl, url != "" else{
                         return
                 }
                 self.SMailTokenIconImg.load(url:URL.init(string: url)!)
-        }
-        
-        @IBAction func ActiveStamp(_ sender: UIButton) {
         }
 }

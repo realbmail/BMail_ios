@@ -80,4 +80,10 @@ class StampWallet: NSObject {
                 CoreDataUtils.CDInst.saveContext()
                 return true
         }
+        
+        public static func ActiveBalance(amount:Int64, tokenAddr:String) throws{
+                guard BmailLibActiveStamp(amount, tokenAddr) else{
+                        throw BMailError.swallet("Active balance failed")
+                }
+        }
 }

@@ -11,9 +11,11 @@ import Foundation
 public enum BMailError: Error, CustomStringConvertible {
         
         case coredata(String)
+        case swallet(String)
         public var description: String {
                 switch self {
                 case .coredata(let err): return "coredata err:=>[\(err)]"
+                case .swallet(let err): return "stamp wallet err:=>[\(err)]"
                 }
         }
 }
