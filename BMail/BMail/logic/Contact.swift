@@ -43,8 +43,9 @@ class BmailContact: NSObject{
                 }
                
                 let condition = NSPredicate.init(format: "ownerMail == %@", owner)
-                
+                let sort = NSSortDescriptor(key: "mailName", ascending: false)
                 guard let result = CoreDataUtils.CDInst.findEntity(Constants.DBNAME_Contract,
+                                                                   sortBy: [sort],
                                                                    where: condition) as? [CDContact]? else{
                         return
                 }

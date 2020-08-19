@@ -38,6 +38,12 @@ public class SystemConf: NSObject{
                 }
         }
         
+        public var stampInUse:String?{
+                didSet{
+                        conf.stampInUse = stampInUse
+                }
+        }
+        
         private override init() {
                 guard let c = CoreDataUtils.CDInst.findOneEntity(Constants.DBNAME_SystemConfig) as? CDSysConfig else{
                         
@@ -55,6 +61,7 @@ public class SystemConf: NSObject{
                 walletTimeOut = conf.walletTimeoutInMin
                 mailCacheSize = conf.mailCacheSize
                 lastestMailTime = conf.lastestMailTime
-                print("======>basic conf activeMail[\(activeMail ?? "<->")] walletTimeOut[\(walletTimeOut)] mailCacheSize[\(mailCacheSize)] lastestMailTime[\(lastestMailTime)]")
+                stampInUse = conf.stampInUse
+                print("======>basic conf \n activeMail[\(activeMail ?? "<->")] \n walletTimeOut[\(walletTimeOut)] \n mailCacheSize[\(mailCacheSize)] \n  lastestMailTime[\(lastestMailTime)]\nstampInUse[\(stampInUse ?? "<->")]")
         }
 }

@@ -155,7 +155,7 @@ extension StampViewController: UITableViewDelegate, UITableViewDataSource{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "StampItemCellID", for: indexPath) as! StampTableViewCell
                 let s = stampAvailable[indexPath.row]
                 cell.populate(stamp:s, idx: indexPath.row)
-                if s.IsInUse{
+                if SystemConf.SCInst.stampInUse == s.ContractAddr{
                         self.inUsedPath = indexPath
                 }
                 return cell
@@ -163,11 +163,9 @@ extension StampViewController: UITableViewDelegate, UITableViewDataSource{
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 let s = stampAvailable[indexPath.row]
-                s.IsInUse = true
+                SystemConf.SCInst.stampInUse = s.ContractAddr
                 var need_reload = [indexPath]
                 if let path = self.inUsedPath{
-                        let s_old = stampAvailable[path.row]
-                        s_old.IsInUse = false
                         need_reload.append(path)
                 }
                 
