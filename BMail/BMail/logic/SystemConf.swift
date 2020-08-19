@@ -18,27 +18,23 @@ public class SystemConf: NSObject{
         public var walletTimeOut:Int16 = DefaultWalletTimeInMin{
                 didSet{
                         conf.walletTimeoutInMin = walletTimeOut
-                        CoreDataUtils.CDInst.saveContext()
                 }
         }
         public var mailCacheSize:Int16 = 50{
                 didSet{
                         conf.mailCacheSize = mailCacheSize
-                        CoreDataUtils.CDInst.saveContext()
                 }
         }
         
         public var activeMail:String?{
                 didSet{
                         conf.activeMail = activeMail
-                        CoreDataUtils.CDInst.saveContext()
                 }
         }
         
         public var lastestMailTime:Int64 = 0{
                 didSet{
                         conf.lastestMailTime = lastestMailTime
-                        CoreDataUtils.CDInst.saveContext()
                 }
         }
         

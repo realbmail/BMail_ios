@@ -12,7 +12,17 @@ import BmailLib
 import SwiftyJSON
 
 class Stamp: NSObject{
-        var IsInused:Bool = false
+        var IsInUse:Bool = false{
+                didSet{
+                        
+                        let condition = NSPredicate.init(format: "sAddress == %@ ", ContractAddr)
+                        guard let stamp = CoreDataUtils.CDInst.findOneEntity(Constants.DBNAME_Stamp, where: condition) as? CDStamp else{
+                                return
+                        }
+                        stamp.isInUse = IsInUse
+                }
+        }
+        
         var ContractAddr:String!
         var IssuerAddr:String!
         var Name:String!
@@ -36,6 +46,7 @@ class Stamp: NSObject{
                 ActiveBalance = coreData.active
                 Credit = coreData.credit
                 Epoch = coreData.epoch
+                IsInUse = coreData.isInUse
         }
         
         init(jsonData:Data){
@@ -67,6 +78,7 @@ class Stamp: NSObject{
                 let condition = NSPredicate.init(format: "mailDomain == %@", domain)
                 
                 guard let result = CoreDataUtils.CDInst.findEntity(Constants.DBNAME_Stamp,
+                                                                   sortBy: [NSSortDescriptor(key: "balance", ascending: false)],
                                                                    where: condition) as? [CDStamp]? else{
                         return
                 }
@@ -115,6 +127,7 @@ class Stamp: NSObject{
                                 newObj.name = stamp.Name
                                 newObj.symbol = stamp.Symbol
                                 newObj.epoch = stamp.Epoch
+                                newObj.isInUse = stamp.IsInUse
                         }
                 }
                 

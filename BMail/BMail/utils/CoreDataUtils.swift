@@ -22,9 +22,10 @@ public class CoreDataUtils: NSObject{
                 context = coreDataManager.managedObjectContext// appDelegate.persistentContainer.viewContext
         }
         
-        open func findEntity(_ entityName: String, where w:NSPredicate? = nil) -> [AnyObject]?{
+        open func findEntity(_ entityName: String, sortBy:[NSSortDescriptor]? = nil, where w:NSPredicate? = nil) -> [AnyObject]?{
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
                 request.predicate = w
+                request.sortDescriptors = sortBy
                 let result: [AnyObject]?
                 do {
                         result = try self.context.fetch(request)

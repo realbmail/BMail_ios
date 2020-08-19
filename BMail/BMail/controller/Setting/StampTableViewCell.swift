@@ -37,7 +37,7 @@ class StampTableViewCell: UITableViewCell {
                 self.SIssuerAddrLbl.text = stamp.IssuerAddr!
                 self.SMailTokenName.text = stamp.Name
                 self.SmailTokenSymbol.text = stamp.Symbol
-                self.InUseCheckImg.isHidden = !stamp.IsInused
+                self.InUseCheckImg.isHidden = !stamp.IsInUse
                 activeBtn.tag = idx
                 guard let url = stamp.IconUrl, url != "" else{
                         return
