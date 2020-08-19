@@ -20,9 +20,17 @@ class StampViewController: UIViewController {
         var curViewType:MailActionType = .Stamp
         var delegate:CenterViewControllerDelegate?
         var inUsedPath:IndexPath?
+        var selStamp:Stamp?
         
         override func viewDidLoad() {
+                
                 super.viewDidLoad()
+                
+                NotificationCenter.default.addObserver(self, selector:
+                #selector(StampActived(_:)),
+                       name: Constants.NOTI_SYSTEM_STAMP_ACTIVED,
+                       object: nil)
+                
                 StampAvailableTableView.rowHeight = 192
                 StampWallet.LoadWallet()
                 Stamp.LoadStampDataFromCache()
@@ -45,6 +53,20 @@ class StampViewController: UIViewController {
                         rightBarBtnItem.image = UIImage.init(named: "fresh-icon")
                         WalletAddresLbl.text = StampWallet.CurSWallet.Address!
                         WalletEthBalanceLbl.text = "\(StampWallet.CurSWallet.Balance.ToCoin()) eth"
+                }
+        }
+        
+        @objc func StampActived(_ notification: Notification?) {
+                guard let stampAddr = notification?.object as? String else{
+                        return
+                }
+                self.showIndicator(withTitle: "", and: "Loading......")
+                DispatchQueue.global(qos: .background).async {
+                        Stamp.ReloadStampDetailsFromEth(addr: stampAddr)
+                        self.hideIndicator()
+                        DispatchQueue.main.async {
+                                self.StampAvailableTableView.reloadData()
+                        }
                 }
         }
         
@@ -114,24 +136,18 @@ class StampViewController: UIViewController {
         
         @IBAction func activeStampBalance(_ sender: UIButton) {
                 let stamp = stampAvailable[sender.tag]
-                guard let contract_address = stamp.ContractAddr else{
+                guard nil != stamp.ContractAddr,  nil != self.inUsedPath else{
                         return
                 }
-                
-                self.ShowOneInput(title: "Active Stamp", placeHolder: "amount to active", type: .numberPad) {
-                        (amountStr, isOK) in
-                        guard let amount = Int64(amountStr ?? "0"), isOK, amount > 0 else{
-                                return
-                        }
-                        guard amount <= stamp.Balance else{
-                                self.ShowTips(msg: "Balance is not enough to active")
-                                return
-                        }
-                        do {
-                                try StampWallet.ActiveBalance(amount: amount, tokenAddr: contract_address)
-                        }catch let err{
-                                self.ShowTips(msg: err.localizedDescription)
-                        }
+                self.selStamp = stamp
+                self.performSegue(withIdentifier: "ActiveStampSegID", sender: self)
+        }
+        
+        // MARK: - Navigation
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                if segue.identifier == "ActiveStampSegID"{
+                        let asv = segue.destination as! StampActiveViewController
+                        asv.stamp = self.selStamp
                 }
         }
 }

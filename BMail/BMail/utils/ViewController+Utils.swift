@@ -135,10 +135,10 @@ extension UIViewController {
                 self.present(alertController, animated: true, completion: nil);
         }
         
-        func ShowTips(msg:String){
+        func ShowTips(msg:String, handler: ((UIAlertAction) -> Void)? = nil){
                 DispatchQueue.main.async {
                         let ac = UIAlertController(title: "Tips:".locStr, message: msg, preferredStyle: .alert)
-                        ac.addAction(UIAlertAction(title: "OK".locStr, style: .default))
+                        ac.addAction(UIAlertAction(title: "OK".locStr, style: .default, handler:handler))
                         self.present(ac, animated: true)
                 }
         }

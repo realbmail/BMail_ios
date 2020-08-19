@@ -121,4 +121,32 @@ class Stamp: NSObject{
                 
                 CoreDataUtils.CDInst.saveContext()
         }
+        
+        public static func ReloadStampDetailsFromEth(addr:String){
+                guard let domain = AccountManager.currentAccount?.getDomain() else { return }
+                guard let detail_data = BmailLibStampDetails(addr) else{
+                        NSLog("query detailf for[\(addr)] failed")
+                        return
+                }
+                
+                let stamp = Stamp.init(jsonData:detail_data)
+                stamp.ContractAddr = addr
+                StampAvailableCache[addr] = stamp
+
+                let condition = NSPredicate.init(format: "sAddress == %@ ", stamp.ContractAddr)
+                let _:CDStamp? = CoreDataUtils.CDInst.updateOrInsert(Constants.DBNAME_Stamp, where: condition){
+                        (newObj)in
+                        newObj.active = stamp.ActiveBalance
+                        newObj.balance = stamp.Balance
+                        newObj.iconUrl = stamp.IconUrl
+                        newObj.issuer = stamp.IssuerAddr
+                        newObj.mailDomain = domain
+                        newObj.sAddress = stamp.ContractAddr
+                        newObj.name = stamp.Name
+                        newObj.symbol = stamp.Symbol
+                        newObj.epoch = stamp.Epoch
+                }
+                
+                CoreDataUtils.CDInst.saveContext()
+        }
 }

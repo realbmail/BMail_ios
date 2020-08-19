@@ -33,6 +33,7 @@ struct Constants {
         
         
         static let NOTI_SYSTEM_ACTIVE_MAIL_CHANGED = Notification.Name("NOTI_SYSTEM_ACTIVE_MAIL_CHANGED")
+        static let NOTI_SYSTEM_STAMP_ACTIVED = Notification.Name("NOTI_SYSTEM_STAMP_ACTIVED")
 }
 
 
