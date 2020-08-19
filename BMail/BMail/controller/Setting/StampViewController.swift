@@ -126,6 +126,11 @@ class StampViewController: UIViewController {
                 }
         }
         
+        @IBAction func QueryCreditAction(_ sender: UIButton) {
+                
+        }
+        
+        
         @IBAction func showStampWalletQR(_ sender: UIButton) {
                 guard  let address = self.WalletAddresLbl.text else {
                         self.ShowTips(msg: "No valid stamp wallet".locStr)
@@ -149,6 +154,11 @@ class StampViewController: UIViewController {
                         let asv = segue.destination as! StampActiveViewController
                         asv.stamp = self.selStamp
                 }
+                
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                backItem.tintColor = UIColor.init(hexColorCode: "#04062E")
+                navigationItem.backBarButtonItem = backItem
         }
 }
 

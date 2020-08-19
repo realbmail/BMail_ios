@@ -913,12 +913,6 @@
                                                             <color key="textColor" red="0.015686274509803921" green="0.023529411764705882" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE1-bu-Y74">
-                                                            <rect key="frame" x="297" y="133" width="40" height="19.666666666666657"/>
-                                                            <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
-                                                            <color key="textColor" red="0.015686274510000001" green="0.023529411760000001" blue="0.18039215689999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issuer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWz-Um-hKT">
                                                             <rect key="frame" x="8" y="74" width="36" height="14"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
@@ -951,7 +945,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO7-6U-iX8">
-                                                            <rect key="frame" x="311" y="99" width="12" height="28"/>
+                                                            <rect key="frame" x="291" y="99" width="12" height="28"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="20"/>
                                                             <color key="textColor" red="0.015686274510000001" green="0.023529411760000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -983,15 +977,35 @@
                                                                 <constraint firstAttribute="width" constant="32" id="pxb-vN-SPc"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Q1-r7-UFY">
+                                                            <rect key="frame" x="257" y="127" width="80" height="32"/>
+                                                            <color key="backgroundColor" red="0.015686274510000001" green="0.023529411760000001" blue="0.18039215689999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="IcW-hG-diF"/>
+                                                                <constraint firstAttribute="height" constant="32" id="Yzn-uI-mMv"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <state key="normal" title="Credit" image="fresh-icon">
+                                                                <color key="titleColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="QueryCreditAction:" destination="N3b-eL-eii" eventType="touchUpInside" id="xfa-10-uty"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="1Q1-r7-UFY" secondAttribute="trailing" constant="8" id="2to-D0-oAq"/>
                                                         <constraint firstItem="ddu-KQ-EM4" firstAttribute="centerX" secondItem="wgL-AD-MTH" secondAttribute="centerX" id="5Hq-zl-9Di"/>
                                                         <constraint firstItem="Lb1-t6-8gl" firstAttribute="centerY" secondItem="DWz-Um-hKT" secondAttribute="centerY" id="5bJ-Vi-jCZ"/>
                                                         <constraint firstItem="rIZ-Mx-FYs" firstAttribute="centerY" secondItem="ZMD-eq-Zwt" secondAttribute="centerY" id="5ha-Mf-8or"/>
                                                         <constraint firstItem="anP-Dj-3f5" firstAttribute="centerX" secondItem="RoX-HU-ZGV" secondAttribute="centerX" id="7f6-4E-vRw"/>
                                                         <constraint firstAttribute="trailing" secondItem="0HX-Ez-ZI6" secondAttribute="trailing" constant="8" id="88g-nk-OC3"/>
-                                                        <constraint firstItem="AE1-bu-Y74" firstAttribute="centerX" secondItem="tO7-6U-iX8" secondAttribute="centerX" id="8nQ-Ln-J4e"/>
                                                         <constraint firstItem="DWz-Um-hKT" firstAttribute="centerX" secondItem="WXt-xx-Nvv" secondAttribute="centerX" id="A7g-dY-53v"/>
                                                         <constraint firstItem="DWz-Um-hKT" firstAttribute="leading" secondItem="wgL-AD-MTH" secondAttribute="leading" constant="8" id="AWc-d5-D11"/>
                                                         <constraint firstAttribute="trailing" secondItem="bKK-1S-6ln" secondAttribute="trailing" constant="22" id="BXq-Tw-sxS"/>
@@ -1000,8 +1014,6 @@
                                                         <constraint firstAttribute="trailing" secondItem="Lb1-t6-8gl" secondAttribute="trailing" constant="8" id="MvD-sM-AiV"/>
                                                         <constraint firstItem="RoX-HU-ZGV" firstAttribute="leading" secondItem="wgL-AD-MTH" secondAttribute="leading" constant="8" id="R65-4x-Akm"/>
                                                         <constraint firstItem="Lb1-t6-8gl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DWz-Um-hKT" secondAttribute="trailing" constant="8" symbolic="YES" id="SHT-vS-msC"/>
-                                                        <constraint firstAttribute="trailing" secondItem="AE1-bu-Y74" secondAttribute="trailing" constant="8" id="TdM-JP-vE6"/>
-                                                        <constraint firstItem="AE1-bu-Y74" firstAttribute="top" secondItem="RoX-HU-ZGV" secondAttribute="top" id="UdC-zK-9Rc"/>
                                                         <constraint firstItem="0HX-Ez-ZI6" firstAttribute="leading" secondItem="wgL-AD-MTH" secondAttribute="leading" constant="8" id="XsI-Fy-pyc"/>
                                                         <constraint firstItem="anP-Dj-3f5" firstAttribute="top" secondItem="0HX-Ez-ZI6" secondAttribute="bottom" constant="6" id="a8C-hQ-nj4"/>
                                                         <constraint firstItem="WXt-xx-Nvv" firstAttribute="leading" secondItem="wgL-AD-MTH" secondAttribute="leading" constant="8" id="c6u-uu-hw3"/>
@@ -1015,11 +1027,13 @@
                                                         <constraint firstItem="bKK-1S-6ln" firstAttribute="centerY" secondItem="oqa-1u-3iK" secondAttribute="centerY" id="mbZ-yh-T5U"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rIZ-Mx-FYs" secondAttribute="trailing" constant="20" symbolic="YES" id="oS2-2V-s2I"/>
                                                         <constraint firstItem="Lb1-t6-8gl" firstAttribute="top" secondItem="rIZ-Mx-FYs" secondAttribute="bottom" constant="3.6666666666666714" id="p87-i3-BeT"/>
+                                                        <constraint firstItem="tO7-6U-iX8" firstAttribute="centerX" secondItem="1Q1-r7-UFY" secondAttribute="centerX" id="plB-hj-W8d"/>
                                                         <constraint firstItem="rIZ-Mx-FYs" firstAttribute="leading" secondItem="ZMD-eq-Zwt" secondAttribute="trailing" constant="8" id="tiS-jW-XsE"/>
                                                         <constraint firstItem="WXt-xx-Nvv" firstAttribute="top" secondItem="wgL-AD-MTH" secondAttribute="top" constant="12" id="uze-34-CQJ"/>
                                                         <constraint firstItem="ZMD-eq-Zwt" firstAttribute="leading" secondItem="wgL-AD-MTH" secondAttribute="leading" constant="8" id="vdm-CW-Cl9"/>
                                                         <constraint firstItem="RoX-HU-ZGV" firstAttribute="top" secondItem="anP-Dj-3f5" secondAttribute="bottom" constant="4" id="vlS-oj-Vgc"/>
                                                         <constraint firstItem="tO7-6U-iX8" firstAttribute="top" secondItem="0HX-Ez-ZI6" secondAttribute="bottom" constant="4" id="vu8-gQ-Tr8"/>
+                                                        <constraint firstItem="1Q1-r7-UFY" firstAttribute="centerY" secondItem="xTM-tn-ag3" secondAttribute="centerY" id="wbP-H3-ZWW"/>
                                                         <constraint firstItem="xTM-tn-ag3" firstAttribute="centerY" secondItem="RoX-HU-ZGV" secondAttribute="centerY" id="zvS-Dk-3As"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -1048,6 +1062,7 @@
                                             <outlet property="SMailTokenName" destination="oqa-1u-3iK" id="e4z-Qu-jGg"/>
                                             <outlet property="SmailTokenSymbol" destination="rIZ-Mx-FYs" id="XKI-LQ-6B6"/>
                                             <outlet property="activeBtn" destination="xTM-tn-ag3" id="AFp-vW-Qb1"/>
+                                            <outlet property="creditFreshBtn" destination="1Q1-r7-UFY" id="T0u-Qi-k9u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3467,6 +3482,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="6aN-ti-etr">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="top_menu" id="DAC-vs-mDq">
+                            <color key="tintColor" red="0.015686274510000001" green="0.023529411760000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="showMenu:" destination="DrT-3z-d2E" id="Slg-1o-Occ"/>
                             </connections>
@@ -3652,6 +3668,7 @@
         <image name="cross" width="16" height="16"/>
         <image name="dots-options" width="24" height="6"/>
         <image name="forward-icon" width="14" height="14"/>
+        <image name="fresh-icon" width="32" height="32"/>
         <image name="icon-down" width="13" height="8"/>
         <image name="logo2" width="71" height="71"/>
         <image name="mail_attachment" width="14" height="14"/>

@@ -45,11 +45,11 @@ func toDate(str:String, format:String) -> Date{
 extension Double{
         public func ToCoin() -> String{
                 let val = self/Constants.CoinDecimal
-                return String.init(format: "%.2f", val)
+                return String.init(format: "%.4f", val)
         }
         
         public func ToString() -> String{
-                return String.init(format: "%.2f", self)
+                return String.init(format: "%.4f", self)
         }
 }
 

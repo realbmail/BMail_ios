@@ -20,6 +20,7 @@ class StampTableViewCell: UITableViewCell {
         @IBOutlet weak var SMailTokenIconImg: UIImageView!
         @IBOutlet weak var InUseCheckImg: UIImageView!
         @IBOutlet weak var activeBtn: UIButton!
+        @IBOutlet weak var creditFreshBtn: UIButton!
         
         
         override func awakeFromNib() {
@@ -39,6 +40,7 @@ class StampTableViewCell: UITableViewCell {
                 self.SmailTokenSymbol.text = stamp.Symbol
                 self.InUseCheckImg.isHidden = SystemConf.SCInst.stampInUse != stamp.ContractAddr
                 activeBtn.tag = idx
+                creditFreshBtn.tag = idx
                 guard let url = stamp.IconUrl, url != "" else{
                         return
                 }
