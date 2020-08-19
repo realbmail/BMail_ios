@@ -129,29 +129,34 @@ public class CoreDataUtils: NSObject{
                 }
         }
         
-        open func updateOrInsert<T>(_ entityName: String, isExist:((T)->Bool), updateObj:((T)->Void), insertObj:((T)->Void), where w:NSPredicate? = nil){
+        open func updateOrInsert<T>(_ entityName: String, where w:NSPredicate, updateField:((inout T)->Void))->T?{
                        
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
                 request.predicate = w
+                request.fetchLimit = 1
                        
-                guard let result = try? context.fetch(request) as? [T] else{
-                        return
+                guard let result = try? context.fetch(request) else{
+                        return nil
                 }
                 
-                for object in result {
-                        if isExist(object){
-                                updateObj(object)
-                        }else{
-                                let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
-                                guard  let e = entity else {
-                                        return
-                                }
-                                
-                                guard let newObj = NSManagedObject(entity: e, insertInto: context) as? T else{
-                                        return
-                                }
-                                insertObj(newObj)
+                if result.count == 0{
+                        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+                        guard  let e = entity else {
+                                return nil
                         }
+                        
+                        guard var newObj = NSManagedObject(entity: e, insertInto: context) as? T else{
+                                return nil
+                        }
+                        updateField(&newObj)
+                        return newObj
                 }
+                
+                guard var oldObj = result.last as? T else{
+                        return nil
+                }
+                
+                updateField(&oldObj)
+                return oldObj
         }
 }

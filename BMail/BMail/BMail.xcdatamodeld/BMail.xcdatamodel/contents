@@ -41,6 +41,7 @@
         <attribute name="active" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="balance" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="credit" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="epoch" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="iconUrl" optional="YES" attributeType="String"/>
         <attribute name="issuer" optional="YES" attributeType="String"/>
         <attribute name="mailDomain" optional="YES" attributeType="String"/>
@@ -64,7 +65,7 @@
         <element name="CDContact" positionX="261" positionY="216" width="128" height="118"/>
         <element name="CDEnvelope" positionX="261" positionY="216" width="128" height="343"/>
         <element name="CDMailAccount" positionX="261" positionY="189" width="128" height="118"/>
-        <element name="CDStamp" positionX="261" positionY="351" width="128" height="164"/>
+        <element name="CDStamp" positionX="261" positionY="351" width="128" height="179"/>
         <element name="CDStampWallet" positionX="261" positionY="351" width="128" height="89"/>
         <element name="CDSysConfig" positionX="261" positionY="216" width="128" height="103"/>
     </elements>
