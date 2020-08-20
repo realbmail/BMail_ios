@@ -436,3 +436,15 @@ extension String {
         })
     }
 }
+
+func MultiThread(taskThread: @escaping () -> Void, mainThread:@escaping () -> Void){
+        
+        DispatchQueue.global(qos: .default).async {
+
+                taskThread()
+
+                DispatchQueue.main.async {
+                        mainThread()
+                }
+        }
+}
