@@ -35,6 +35,10 @@ class StampWallet: NSObject {
                 return self.Address == nil
         }
         
+        func isOpen() -> Bool {
+                return BmailLibStampWalletIsOpen()
+        }
+        
         func openWallet(auth:String) -> Bool{
                 return BmailLibOpenStampWallet(auth)
         }

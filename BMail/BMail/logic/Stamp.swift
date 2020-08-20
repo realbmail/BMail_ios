@@ -82,6 +82,24 @@ class Stamp: NSObject{
                 }
         }
         
+        public static func QueryCreditOf(stampAddr:String){
+                guard let domain = AccountManager.currentAccount?.getDomain() else {return}
+                guard let json_data = BmailLibStampReceipt(domain, stampAddr) else {return}
+                
+                let json = JSON(json_data)
+                
+                let credit = json["credit"].int64 ?? 0
+                
+                StampAvailableCache[stampAddr]?.Credit = credit
+                
+                let condition = NSPredicate.init(format: "sAddress == %@ ", stampAddr)
+                guard let coreData = CoreDataUtils.CDInst.findOneEntity(Constants.DBNAME_Stamp, where: condition) as? CDStamp else{
+                        return
+                }
+                coreData.credit = credit
+                CoreDataUtils.CDInst.saveContext()
+        }
+        
         public static func LoadAvailableStampAddressFromDomainOwner(){
                 guard let domain = AccountManager.currentAccount?.getDomain() else { return }
                                

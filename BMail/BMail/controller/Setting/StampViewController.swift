@@ -126,8 +126,36 @@ class StampViewController: UIViewController {
                 }
         }
         
+        func queryCredit(_ idx:Int){
+                
+                self.showIndicator(withTitle: "", and: "Querying......")
+                let stamp:Stamp = stampAvailable[idx]
+                DispatchQueue.global(qos: .background).async {
+                        Stamp.QueryCreditOf(stampAddr: stamp.ContractAddr)
+                        DispatchQueue.main.async {
+                                self.hideIndicator()
+                                self.StampAvailableTableView.reloadRows(at: [IndexPath.init(row: idx, section: 0)], with: .none)
+                        }
+                }
+        }
+        
         @IBAction func QueryCreditAction(_ sender: UIButton) {
                 
+                guard StampWallet.CurSWallet.isOpen() else{
+                        self.ShowOneInput(title: "Stamp Wallet", placeHolder: "stamp wallet password", type: .default) { (password, isOK) in
+                                guard let pwd = password, isOK else{
+                                        return
+                                }
+                                
+                                guard StampWallet.CurSWallet.openWallet(auth: pwd) else{
+                                        return
+                                }
+                                self.queryCredit(sender.tag)
+                        }
+                        return
+                }
+                
+                queryCredit(sender.tag)
         }
         
         
