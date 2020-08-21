@@ -53,8 +53,8 @@ class StampWallet: NSObject {
         public static func LoadWallet(){
                 guard let wallet = CoreDataUtils.CDInst.findOneEntity(Constants.DBNAME_StampWallet)
                         as? CDStampWallet else{ return }
-                print(wallet.jsonStr!)
-                guard BmailLibStampWalletFromJson(wallet.jsonStr) == true else{
+                guard BmailLibStampWalletFromJson(wallet.jsonStr)else{
+                        print("---------->load failed---")
                         return
                 }
                 
