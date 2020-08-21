@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 BmailLibInitSystem(self, true)
                 MailManager.loadCounter()
                 BmailContact.LoadContact()
+                StampWallet.LoadWallet()
                 if AccountManager.mailAccounts.count > 0{
                         initialVC = ContainerViewController()
                 }else{

@@ -114,25 +114,42 @@ class InboxViewController: UIViewController{
                 self.configureNavigationBar()
                 self.changeContext(viewType: .Inbox)
         }
+        //MARK: - IB Action
+        
+        private func newMailAction(){
+                self.curSelectedMail = nil
+                DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "ComposeNewMailSEG", sender: self)
+                }
+        }
+        
+        @IBAction func CreateNewMail(_ sender: UIButton) {
+                
+                if StampWallet.CurSWallet.isEmpty() || StampWallet.CurSWallet.isOpen(){
+                        self.newMailAction()
+                        return
+                }
+                self.ShowOneInput(title: "Stamp Wallet", placeHolder: "Stamp Wallet Password", type: .default){
+                        (password, isOK) in
+                        guard let pwd = password, isOK else{
+                                return
+                        }
+                        
+                        if !StampWallet.CurSWallet.openWallet(auth: pwd){
+                                self.ShowTips(msg: "Open Stamp Wallet Failed")
+                                return
+                        }
+                        self.newMailAction()
+                }
+        }
         
         func refreshMailList(){ mailOpQueue.async {
                 let _ = MailManager.PopInboxMail(olderThanSince: false,
                                                          cb: self.mailHelper)
-//                if need_load{
-                        self.reloadTableData()
-//                }
-                DispatchQueue.main.async {
-                        self.refreshControl.endRefreshing()
-                }
+                self.reloadTableData()
                 
         }}
-        @IBAction func CreateNewMail(_ sender: UIButton) {
-                self.curSelectedMail = nil
-                self.performSegue(withIdentifier: "ComposeNewMailSEG", sender: self)
-        }
-        
         @objc func BPopMailFromServer(_ sender: UIRefreshControl) {
-                defer{self.refreshControl.endRefreshing()}
                 
                 guard let account = AccountManager.currentAccount else {
                         return
@@ -144,9 +161,15 @@ class InboxViewController: UIViewController{
                 }
                 
                 guard account.isOpen() else {
-                        self.OpenWallet(title: "Mail Account".locStr, placeHolder: "Password".locStr) {
+                        self.OpenWallet(title: "Mail Account".locStr, placeHolder: "Mail Password".locStr) {
                                 actTyp in
-                                guard actTyp == .Success else{return}
+                                
+                                guard actTyp == .Success else{
+                                        DispatchQueue.main.async {
+                                                self.refreshControl.endRefreshing()
+                                        }
+                                        return
+                                }
                                 self.refreshMailList()
                         }
                         return
@@ -166,7 +189,7 @@ class InboxViewController: UIViewController{
                         }
                 }))
         }
-        
+        //MARK: - Internal funcs
         @objc internal  func MoreAction(_ sender: UIBarButtonItem) {
                 
                 if curViewType == .Draft || curViewType == .Recycle{
@@ -338,44 +361,6 @@ extension InboxViewController: UITableViewDelegate, UITableViewDataSource{
         func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
                 return true
         }
-        
-//        func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//                let deleteAction = self.contextualDeleteAction(forRowAtIndexPath: indexPath)
-//                let flagAction = self.contextualToggleFlagAction(forRowAtIndexPath: indexPath)
-//
-//                let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction, flagAction])
-//                return swipeConfig
-//        }
-//
-//        func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-//                let action = UIContextualAction(style: .normal, title: "Delete") { (action:UIContextualAction, sourceView:UIView, completionHandler: (Bool) -> Void) in
-//                        completionHandler(true)
-//                }
-//                return action
-//        }
-//
-//        func contextualToggleFlagAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-//
-//                let mail = MailManager.CurrentMailList[indexPath.row]
-//                var title:String
-//                var imageName:String
-//                if mail.isUnread{
-//                        title = "Mark as Read"
-//                        imageName = "read-icon"
-//                }else{
-//                        title = "Mark as unRead"
-//                        imageName = "readed-icon"
-//                }
-//                let action = UIContextualAction(style: .normal,
-//                                            title: title) {
-//                                                (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
-//                        self.envelopTableView.reloadRows(at: [indexPath], with: .none)
-//                        completionHandler(true)
-//                }
-//
-//                action.image = UIImage(named: imageName)
-//                return action
-//        }
 }
 
 extension InboxViewController: ComposerSendMailDelegate{
@@ -385,6 +370,7 @@ extension InboxViewController: ComposerSendMailDelegate{
                 MailManager.reloadCounter(typ: self.curViewType)
                 DispatchQueue.main.async {
                         self.envelopTableView.reloadData()
+                        self.refreshControl.endRefreshing()
                 }
         }
         
