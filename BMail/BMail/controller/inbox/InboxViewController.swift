@@ -111,7 +111,8 @@ class InboxViewController: UIViewController{
                                                 action: #selector(DecryptMailList))
                 
                 decrypteButtonItem.tintColor = tint_color
-                self.configureNavigationBar()
+                self.navigationController?.navigationBar.barTintColor = UIColor.white// UIColor(RRGGBB: UInt(0x505061))
+                self.setNeedsStatusBarAppearanceUpdate()
                 self.changeContext(viewType: .Inbox)
         }
         
@@ -127,6 +128,7 @@ class InboxViewController: UIViewController{
                         self.newMailAction()
                         return
                 }
+                
                 self.ShowOneInput(title: "Stamp Wallet", placeHolder: "Stamp Wallet Password", type: .default){
                         (password, isOK) in
                         guard let pwd = password, isOK else{
@@ -264,11 +266,6 @@ class InboxViewController: UIViewController{
         @objc internal func NewMailAction(_ sender: UIBarButtonItem) {
                 self.curSelectedMail = nil
                 self.performSegue(withIdentifier: "ComposeNewMailSEG", sender: self)
-        }
-        
-        func configureNavigationBar() {
-                self.navigationController?.navigationBar.barTintColor = UIColor.white// UIColor(RRGGBB: UInt(0x505061))
-                self.setNeedsStatusBarAppearanceUpdate()
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -26,13 +26,16 @@ class OnePasswordViewController: PasswordViewController {
         }
         
         @IBAction func OKCation(_ sender: Any) {
-                parent?.dismiss(animated: false, completion: nil);
                 let password = self.paswordInputTF.text
-                self.payload.action(password, true)
+                self.dismiss(animated: false){
+                        self.payload.action(password, true)
+                }
+                
         }
         
         @IBAction func CancelAction(_ sender: Any) {
-                parent?.dismiss(animated: false, completion: nil);
-                payload.action(nil, false)
+                self.dismiss(animated: false){
+                        self.payload.action(nil, false)
+                }
         }
 }
