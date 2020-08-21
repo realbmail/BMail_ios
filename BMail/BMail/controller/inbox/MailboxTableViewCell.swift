@@ -44,13 +44,13 @@ class MailboxTableViewCell: UITableViewCell {
                         if data.isDraft{
                                 self.title.text = data.rawSubject ?? "No Subject"
                         }else{
-                                self.title.text = "Crypted title".locStr
+                                self.title.text = "******".locStr
                         }
                 }
                 if data.isUnread{
-                        self.title.font = UIFont.boldSystemFont(ofSize: self.title.font.pointSize)
+                        self.title.font = self.title.font.bold(size: 20)
                 }else{
-                        self.title.font = UIFont.systemFont(ofSize: self.title.font.pointSize)
+                        self.title.font = self.title.font.unBold(size: 16)
                 }
                 
                 let size = time.sizeThatFits(CGSize(width: 100.0, height: 19))

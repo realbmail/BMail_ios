@@ -113,6 +113,36 @@ extension UIStoryboard {
         }
 }
 
+extension UIFont {
+        func withTraits(traits:UIFontDescriptor.SymbolicTraits, size:CGFloat?=nil) -> UIFont {
+                let fontDescriptorVar = fontDescriptor.withSymbolicTraits(traits)!
+                return UIFont(descriptor: fontDescriptorVar, size: size ?? 0)
+        }
+
+        func bold(size:CGFloat? = nil) -> UIFont {
+                var symTraits = fontDescriptor.symbolicTraits
+                symTraits.insert([.traitBold])
+                return withTraits(traits: symTraits, size:size)
+        }
+        func unBold(size:CGFloat? = nil) -> UIFont {
+                var symTraits = fontDescriptor.symbolicTraits
+                symTraits.remove([.traitBold])
+                return withTraits(traits: symTraits, size:size)
+        }
+
+        func italic(size:CGFloat? = nil) -> UIFont {
+                var symTraits = fontDescriptor.symbolicTraits
+                symTraits.insert([.traitItalic])
+                return withTraits(traits: symTraits, size:size)
+        }
+
+        func unItalic(size:CGFloat? = nil) -> UIFont {
+                var symTraits = fontDescriptor.symbolicTraits
+                symTraits.remove([.traitItalic])
+                return withTraits(traits: symTraits, size:size)
+        }
+}
+
 extension UIColor {
 
 convenience init(RRGGBB: UInt, alpha: CGFloat) {

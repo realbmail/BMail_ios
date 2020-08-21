@@ -114,13 +114,11 @@ class InboxViewController: UIViewController{
                 self.configureNavigationBar()
                 self.changeContext(viewType: .Inbox)
         }
-        //MARK: - IB Action
         
+        //MARK: - IB Action
         private func newMailAction(){
                 self.curSelectedMail = nil
-                DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "ComposeNewMailSEG", sender: self)
-                }
+                self.performSegue(withIdentifier: "ComposeNewMailSEG", sender: self)
         }
         
         @IBAction func CreateNewMail(_ sender: UIButton) {
