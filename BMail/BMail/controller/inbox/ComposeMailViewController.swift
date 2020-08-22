@@ -15,7 +15,7 @@ import ContactsUI
 
 
 protocol ComposerSendMailDelegate: class {
-        func sendMail(mail: EnvelopeEntity)
+        func sendMail(mail: EnvelopeEntity, stamp:Stamp?)
         func newDraft(draft: EnvelopeEntity)
         func deleteDraft(draftId: String)
 }
@@ -425,7 +425,8 @@ class ComposeMailViewController: UIViewController {
                         self.resignKeyboard()
                         self.toggleInteraction(false)
                         self.dismiss(animated: true){
-                                self.delegate?.sendMail(mail: self.currentMail!)
+                                
+                                self.delegate?.sendMail(mail: self.currentMail!, stamp: nil)
                         }
                 }
         }

@@ -369,14 +369,15 @@ extension InboxViewController: ComposerSendMailDelegate{
                 }
         }
         
-        func sendMail(mail: EnvelopeEntity) {mailOpQueue.async {
+        func sendMail(mail: EnvelopeEntity, stamp:Stamp?) {mailOpQueue.async {
                 
                 guard mail.encodeEnvlopeByPin() == true else{
                         self.ShowTips(msg: "Failed to encrypt mail data".locStr)
                         return
                 }
-                guard let str = mail.ToJsonString() else{ return }
-                if !BmailLibSendMailJson(str, mail.pinCode, self.mailHelper){
+                guard let mail_json = mail.ToJsonData() else{ return }
+                let stamp_json = stamp?.payStamp()
+                if !BmailLibSendMailJson(mail_json, stamp_json, mail.pinCode, self.mailHelper){
                         self.newDraft(draft: mail)
                         return
                 }

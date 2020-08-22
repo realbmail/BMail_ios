@@ -323,11 +323,11 @@ public class EnvelopeEntity:NSObject, Codable{
                 }
         }
         
-        func ToJsonString() ->String?{
+        func ToJsonData() -> Data?{
                 guard let data = try? JSONEncoder().encode(self) else{
                         return nil
                 }
-                return String.init(data: data, encoding: .utf8)
+                return data
         }
         
         public static func FromJsonString(json:String)->EnvelopeEntity{

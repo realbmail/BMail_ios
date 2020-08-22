@@ -191,4 +191,8 @@ class Stamp: NSObject{
                         return
                 }
         }
+        
+        public func payStamp() ->Data?{
+                return nil
+        }
 }
