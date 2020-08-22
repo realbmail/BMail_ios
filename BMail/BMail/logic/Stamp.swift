@@ -138,6 +138,9 @@ class Stamp: NSObject{
                 }
                 
                 CoreDataUtils.CDInst.saveContext()
+                if SystemConf.SCInst.stampInUse == nil{
+                        SystemConf.SCInst.stampInUse = Stamp.StampAvailableCache.first?.value.ContractAddr
+                }
         }
         
         public static func ReloadStampDetailsFromEth(addr:String){
@@ -166,5 +169,26 @@ class Stamp: NSObject{
                 }
                 
                 CoreDataUtils.CDInst.saveContext()
+        }
+        
+        public static func InitStamp(){
+                StampWallet.LoadWallet()
+                guard !StampWallet.CurSWallet.isEmpty() else{
+                        return
+                }
+                
+                Stamp.LoadStampDataFromCache()
+                
+                guard Stamp.StampAvailableCache.count > 0 else{
+                        DispatchQueue.global(qos: .background).async {
+                                Stamp.LoadAvailableStampAddressFromDomainOwner()
+                        }
+                        return
+                }
+                
+                guard SystemConf.SCInst.stampInUse != nil else {
+                        SystemConf.SCInst.stampInUse = Stamp.StampAvailableCache.first?.value.ContractAddr
+                        return
+                }
         }
 }

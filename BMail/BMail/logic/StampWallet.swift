@@ -49,7 +49,6 @@ class StampWallet: NSObject {
                 }
                 self.Balance = Double(BmailLibWalletEthBalance(address))
         }
-        
         public static func LoadWallet(){
                 guard let wallet = CoreDataUtils.CDInst.findOneEntity(Constants.DBNAME_StampWallet)
                         as? CDStampWallet else{ return }

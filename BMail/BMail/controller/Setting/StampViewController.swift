@@ -32,7 +32,6 @@ class StampViewController: UIViewController {
                        object: nil)
                 
                 StampAvailableTableView.rowHeight = 192
-                Stamp.LoadStampDataFromCache()
                 refreshControl.tintColor = UIColor.red
                 refreshControl.addTarget(self, action: #selector(self.QueryStampFromServer(_:)), for: .valueChanged)
                 StampAvailableTableView.addSubview(refreshControl)
