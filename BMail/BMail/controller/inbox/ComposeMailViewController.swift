@@ -425,7 +425,6 @@ class ComposeMailViewController: UIViewController {
                         self.resignKeyboard()
                         self.toggleInteraction(false)
                         self.dismiss(animated: true){
-                                
                                 self.delegate?.sendMail(mail: self.currentMail!, stamp: nil)
                         }
                 }

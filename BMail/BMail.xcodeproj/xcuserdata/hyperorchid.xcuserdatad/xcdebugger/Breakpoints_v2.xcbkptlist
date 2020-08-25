@@ -7,32 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AB8AED49-3AD4-4466-8FBD-6C8217B178C6"
+            uuid = "10992702-C326-4A96-9E98-D0EBBE3026CC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BMail/logic/StampWallet.swift"
+            filePath = "BMail/logic/Stamp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "LoadWallet()"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "payStamp()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "13442556-042F-4653-A8F4-EB078BB28AB3"
+            uuid = "70B63B9F-719A-45F9-856F-2E0C1F123DDC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BMail/logic/StampWallet.swift"
+            filePath = "BMail/logic/Stamp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "LoadWallet()"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "payStamp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F73B1F3B-622A-443D-B736-E44FA44EA735"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BMail/controller/inbox/InboxViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "sendMail(mail:stamp:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

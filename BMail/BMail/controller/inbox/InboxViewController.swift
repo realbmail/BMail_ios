@@ -377,14 +377,14 @@ extension InboxViewController: ComposerSendMailDelegate{
                 }
                 guard let mail_json = mail.ToJsonData() else{ return }
                 let stamp_json = stamp?.payStamp()
-                if !BmailLibSendMailJson(mail_json, stamp_json, mail.pinCode, self.mailHelper){
+                if !BmailLibSendMailJson(mail_json, mail.pinCode, stamp_json, self.mailHelper){
                         self.newDraft(draft: mail)
                         return
                 }
                 
                 mail.isSent = true
                 mail.isDraft = false
-                
+                stamp?.updateStampCredit()
                 let _ = mail.store()
                 if self.curViewType == .Sent || self.curViewType == .Draft{
                         self.reloadTableData()

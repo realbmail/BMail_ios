@@ -193,6 +193,26 @@ class Stamp: NSObject{
         }
         
         public func payStamp() ->Data?{
-                return nil
+                
+                let json = JSON(["stampAddress":self.ContractAddr as String,
+                                 "userAddress":StampWallet.CurSWallet.Address!,
+                                 "credit":self.Credit + 1,
+                                 "nonce":self.Epoch])
+                
+                guard let data = json.rawString()?.data(using: .utf8) else{
+                        return nil
+                }
+                
+                return data
+        }
+        
+        public func updateStampCredit(){
+
+                let condition = NSPredicate.init(format: "sAddress == %@ ", self.ContractAddr)
+                guard let coreData = CoreDataUtils.CDInst.findOneEntity(Constants.DBNAME_Stamp, where: condition) as? CDStamp else{
+                        return
+                }
+                coreData.credit += 1
+                CoreDataUtils.CDInst.saveContext()
         }
 }
