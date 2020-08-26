@@ -62,9 +62,7 @@ class BMAccount: NSObject {
                 guard acc_json != "" else{
                         return nil
                 }
-                
-                NSLog(acc_json)
-                
+                                
                 let obj = BMAccount()
                 let address = BmailLibAddress()
                 obj.openTime = Date()

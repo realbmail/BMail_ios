@@ -432,14 +432,23 @@ class ComposeMailViewController: UIViewController {
         
         @IBAction func DidSendBmail(_ sender: UIBarButtonItem) {
                 
-                guard activeAccount.isOpen() else {
-                        self.OpenWallet(title: "Confirm".locStr, placeHolder: "Mail Author".locStr) { actType in
-                                if actType == .Success {self.sendAction()}
-                        }
+                if StampWallet.CurSWallet.isEmpty() || StampWallet.CurSWallet.isOpen(){
+                        self.sendAction()
                         return
                 }
                 
-                sendAction()
+                self.ShowOneInput(title: "Stamp Wallet", placeHolder: "Stamp Wallet Password", type: .default){
+                        (password, isOK) in
+                        guard let pwd = password, isOK else{
+                                return
+                        }
+                        
+                        if !StampWallet.CurSWallet.openWallet(auth: pwd){
+                                self.ShowTips(msg: "Open Stamp Wallet Failed")
+                                return
+                        }
+                        self.sendAction()
+                }
         }
         
         //MARK: - local logic

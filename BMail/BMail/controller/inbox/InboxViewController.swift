@@ -114,33 +114,21 @@ class InboxViewController: UIViewController{
                 self.navigationController?.navigationBar.barTintColor = UIColor.white// UIColor(RRGGBB: UInt(0x505061))
                 self.setNeedsStatusBarAppearanceUpdate()
                 self.changeContext(viewType: .Inbox)
+                
+                if AccountManager.currentAccount?.isOpen() == false {
+                        
+                        self.OpenWallet(title: "Account Lock",
+                                        placeHolder: "Maill Password") {
+                                (act) in
+                                guard act == .Success else{
+                                        return
+                                }
+                        }
+                }
         }
-        
-        //MARK: - IB Action
-        private func newMailAction(){
+        @IBAction func CreateNewMail(_ sender: UIButton) {
                 self.curSelectedMail = nil
                 self.performSegue(withIdentifier: "ComposeNewMailSEG", sender: self)
-        }
-        
-        @IBAction func CreateNewMail(_ sender: UIButton) {
-                
-                if StampWallet.CurSWallet.isEmpty() || StampWallet.CurSWallet.isOpen(){
-                        self.newMailAction()
-                        return
-                }
-                
-                self.ShowOneInput(title: "Stamp Wallet", placeHolder: "Stamp Wallet Password", type: .default){
-                        (password, isOK) in
-                        guard let pwd = password, isOK else{
-                                return
-                        }
-                        
-                        if !StampWallet.CurSWallet.openWallet(auth: pwd){
-                                self.ShowTips(msg: "Open Stamp Wallet Failed")
-                                return
-                        }
-                        self.newMailAction()
-                }
         }
         
         func refreshMailList(){ mailOpQueue.async {
